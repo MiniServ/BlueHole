@@ -1,0 +1,374 @@
+[gd_scene format=3 uid="uid://frhkhfbpsgmd"]
+
+[ext_resource type="Texture2D" uid="uid://ceha715dpl6d4" path="res://Art/ui/Strore_ui_box.png" id="1_adcte"]
+[ext_resource type="Script" uid="uid://e08yabyecmxq" path="res://Maintenance/Store_Sell/store_sell.gd" id="1_qunr1"]
+[ext_resource type="Texture2D" uid="uid://3bkplboh8428" path="res://Art/ui/player_ui_box.png" id="2_ylc3n"]
+[ext_resource type="PackedScene" uid="uid://slul887n7cv7" path="res://Maintenance/Store_Sell/store_sell_weapon_inventory.tscn" id="4_8qtn3"]
+[ext_resource type="FontFile" uid="uid://d02hkgqq52dwf" path="res://Font/MonaS12.ttf" id="4_ot3d3"]
+[ext_resource type="PackedScene" uid="uid://lsfqlpxugofm" path="res://Maintenance/Store_Sell/store_sell_accessory_inventory.tscn" id="5_21myi"]
+[ext_resource type="PackedScene" uid="uid://bp0jqb1nvqxji" path="res://Maintenance/Store_Sell/store_sell_memory_inventory.tscn" id="6_21myi"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qunr1"]
+texture = ExtResource("2_ylc3n")
+texture_margin_top = 2.0
+texture_margin_bottom = 2.0
+expand_margin_left = 1.0
+expand_margin_right = 20.0
+region_rect = Rect2(2044, 180, 52, 110)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8qtn3"]
+texture = ExtResource("2_ylc3n")
+texture_margin_top = 2.0
+texture_margin_bottom = 2.0
+expand_margin_left = 1.0
+expand_margin_right = 20.0
+region_rect = Rect2(2044, 180, 52, 110)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_21myi"]
+texture = ExtResource("2_ylc3n")
+texture_margin_top = 2.0
+texture_margin_bottom = 2.0
+expand_margin_left = 1.0
+expand_margin_right = 20.0
+region_rect = Rect2(2044, 180, 52, 110)
+modulate_color = Color(1, 1, 1, 0.7529412)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ot3d3"]
+texture = ExtResource("2_ylc3n")
+region_rect = Rect2(2154, 148, 36, 1560)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v4e3p"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="Theme" id="Theme_fc6nv"]
+VScrollBar/constants/padding_right = 19
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_qunr1")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_8qtn3")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_21myi")
+VScrollBar/styles/scroll = SubResource("StyleBoxTexture_ot3d3")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_v4e3p")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_co45t"]
+texture = ExtResource("1_adcte")
+region_rect = Rect2(3200, 54, 1338, 1709)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_is2la"]
+texture = ExtResource("2_ylc3n")
+texture_margin_top = 2.0
+texture_margin_bottom = 2.0
+expand_margin_left = 1.0
+expand_margin_right = 20.0
+region_rect = Rect2(2044, 180, 52, 110)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_35eo5"]
+texture = ExtResource("2_ylc3n")
+texture_margin_top = 2.0
+texture_margin_bottom = 2.0
+expand_margin_left = 1.0
+expand_margin_right = 20.0
+region_rect = Rect2(2044, 180, 52, 110)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_05u3i"]
+texture = ExtResource("2_ylc3n")
+texture_margin_top = 2.0
+texture_margin_bottom = 2.0
+expand_margin_left = 1.0
+expand_margin_right = 20.0
+region_rect = Rect2(2044, 180, 52, 110)
+modulate_color = Color(1, 1, 1, 0.7529412)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2tc65"]
+texture = ExtResource("2_ylc3n")
+region_rect = Rect2(2154, 148, 36, 1560)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ldbse"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="Theme" id="Theme_4x4c0"]
+VScrollBar/constants/padding_right = 19
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_is2la")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_35eo5")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_05u3i")
+VScrollBar/styles/scroll = SubResource("StyleBoxTexture_2tc65")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_ldbse")
+
+[node name="Store_Sell" type="Control" unique_id=148657625]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_qunr1")
+
+[node name="Right_Panel" type="Panel" parent="." unique_id=827388332]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -715.0
+offset_top = -34.0
+offset_right = -675.0
+offset_bottom = 6.0
+
+[node name="Line" type="Sprite2D" parent="Right_Panel" unique_id=406745093]
+position = Vector2(1136.9999, 108)
+scale = Vector2(0.5991837, 0.57142866)
+texture = ExtResource("1_adcte")
+region_enabled = true
+region_rect = Rect2(1690, 131, 1225, 7)
+
+[node name="SellContainer" type="ScrollContainer" parent="Right_Panel" unique_id=1455908436]
+layout_mode = 0
+offset_left = 760.99994
+offset_top = 112.0
+offset_right = 1546.4492
+offset_bottom = 745.68164
+rotation = 0.000437795
+theme = SubResource("Theme_fc6nv")
+
+[node name="MarginContainer" type="MarginContainer" parent="Right_Panel/SellContainer" unique_id=1569806691]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 23
+
+[node name="SellGrid" type="GridContainer" parent="Right_Panel/SellContainer/MarginContainer" unique_id=77926002]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 60
+theme_override_constants/v_separation = 45
+columns = 4
+
+[node name="StoreSellApplyButton" type="TextureButton" parent="Right_Panel" unique_id=1076602854]
+layout_mode = 0
+offset_left = 976.0
+offset_top = 785.0
+offset_right = 1096.0
+offset_bottom = 830.0
+
+[node name="StoreSellApply_Normal" type="Sprite2D" parent="Right_Panel/StoreSellApplyButton" unique_id=235119411]
+position = Vector2(60, 23)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_adcte")
+region_enabled = true
+region_rect = Rect2(1841, 1482, 239, 89)
+
+[node name="StoreSellApply_Over" type="Sprite2D" parent="Right_Panel/StoreSellApplyButton" unique_id=155428948]
+visible = false
+position = Vector2(60, 23)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_adcte")
+region_enabled = true
+region_rect = Rect2(2181, 1482, 239, 89)
+
+[node name="StoreSellApply_Text" type="Label" parent="Right_Panel/StoreSellApplyButton" unique_id=1055054797]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 45.0
+theme_override_fonts/font = ExtResource("4_ot3d3")
+text = "판매"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StoreSellCancelButton" type="TextureButton" parent="Right_Panel" unique_id=1719515163]
+layout_mode = 0
+offset_left = 1176.0
+offset_top = 785.0
+offset_right = 1296.0
+offset_bottom = 830.0
+
+[node name="StoreSellCancel_Normal" type="Sprite2D" parent="Right_Panel/StoreSellCancelButton" unique_id=536423428]
+position = Vector2(60, 23)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_adcte")
+region_enabled = true
+region_rect = Rect2(1841, 1482, 239, 89)
+
+[node name="StoreSellCancel_Over" type="Sprite2D" parent="Right_Panel/StoreSellCancelButton" unique_id=1240108421]
+visible = false
+position = Vector2(60, 23)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_adcte")
+region_enabled = true
+region_rect = Rect2(2181, 1482, 239, 89)
+
+[node name="StoreSellCancel_Text" type="Label" parent="Right_Panel/StoreSellCancelButton" unique_id=1954780528]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 45.0
+theme_override_fonts/font = ExtResource("4_ot3d3")
+text = "초기화"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Left_Panel" type="Panel" parent="." unique_id=998596273]
+layout_mode = 0
+offset_left = -1398.0
+offset_top = 3.0
+offset_right = -729.0
+offset_bottom = 858.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_co45t")
+
+[node name="WeaponSellButton" type="TextureButton" parent="Left_Panel" unique_id=569484264]
+layout_mode = 0
+offset_left = 88.0
+offset_top = 21.0
+offset_right = 160.0
+offset_bottom = 93.0
+
+[node name="WeaponSell_Normal" type="Sprite2D" parent="Left_Panel/WeaponSellButton" unique_id=1198276184]
+position = Vector2(36, 36)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_adcte")
+region_enabled = true
+region_rect = Rect2(107, 96, 51, 144)
+
+[node name="WeaponSell_Over" type="Sprite2D" parent="Left_Panel/WeaponSellButton" unique_id=799447097]
+visible = false
+position = Vector2(36, 36)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_adcte")
+region_enabled = true
+region_rect = Rect2(107, 344, 51, 144)
+
+[node name="AccessorySellButton" type="TextureButton" parent="Left_Panel" unique_id=1397819891]
+layout_mode = 0
+offset_left = 281.0
+offset_top = 21.0
+offset_right = 353.0
+offset_bottom = 93.0
+
+[node name="AccessorySell_Normal" type="Sprite2D" parent="Left_Panel/AccessorySellButton" unique_id=1935963641]
+position = Vector2(36, 36)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_adcte")
+region_enabled = true
+region_rect = Rect2(307, 126, 74, 88)
+
+[node name="AccessorySell_Over" type="Sprite2D" parent="Left_Panel/AccessorySellButton" unique_id=838942775]
+visible = false
+position = Vector2(36, 36)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_adcte")
+region_enabled = true
+region_rect = Rect2(307, 374, 74, 88)
+
+[node name="HelmetSellButton" type="TextureButton" parent="Left_Panel" unique_id=620404440]
+layout_mode = 0
+offset_left = 489.0
+offset_top = 19.0
+offset_right = 561.0
+offset_bottom = 91.0
+
+[node name="HelmetSell_Normal" type="Sprite2D" parent="Left_Panel/HelmetSellButton" unique_id=608850603]
+position = Vector2(36, 36)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_adcte")
+region_enabled = true
+region_rect = Rect2(538, 103, 103, 121)
+
+[node name="HelmetSell_Over" type="Sprite2D" parent="Left_Panel/HelmetSellButton" unique_id=1251619782]
+visible = false
+position = Vector2(36, 36)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_adcte")
+region_enabled = true
+region_rect = Rect2(538, 351, 103, 121)
+
+[node name="WeaponUp" type="Sprite2D" parent="Left_Panel" unique_id=201611428]
+visible = false
+position = Vector2(317, 57)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_adcte")
+region_enabled = true
+region_rect = Rect2(107, 344, 51, 144)
+
+[node name="Line" type="Sprite2D" parent="Left_Panel" unique_id=1646626939]
+position = Vector2(330.00003, 104)
+scale = Vector2(0.49959186, 0.57142866)
+texture = ExtResource("1_adcte")
+region_enabled = true
+region_rect = Rect2(1690, 131, 1225, 7)
+
+[node name="MarginContainer" type="MarginContainer" parent="Left_Panel" unique_id=833739891]
+layout_mode = 0
+offset_left = 0.99694824
+offset_top = 131.337
+offset_right = 651.99695
+offset_bottom = 827.33704
+theme_override_constants/margin_left = 85
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Left_Panel/MarginContainer" unique_id=1504432965]
+layout_mode = 2
+
+[node name="Item_Name" type="Label" parent="Left_Panel/MarginContainer/VBoxContainer" unique_id=1281544197]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("4_ot3d3")
+theme_override_font_sizes/font_size = 26
+text = "창"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Left_Panel/MarginContainer/VBoxContainer" unique_id=772599652]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_4x4c0")
+
+[node name="Store_Sell_Weapon_Inventory" parent="Left_Panel/MarginContainer/VBoxContainer/ScrollContainer" unique_id=433938281 instance=ExtResource("4_8qtn3")]
+layout_mode = 2
+
+[node name="Store_Sell_Accessory_Inventory" parent="Left_Panel/MarginContainer/VBoxContainer/ScrollContainer" unique_id=301632934 instance=ExtResource("5_21myi")]
+visible = false
+layout_mode = 2
+
+[node name="Store_Sell_Memory_Inventory" parent="Left_Panel/MarginContainer/VBoxContainer/ScrollContainer" unique_id=1503696425 instance=ExtResource("6_21myi")]
+visible = false
+layout_mode = 2
+
+[connection signal="mouse_entered" from="Right_Panel/StoreSellApplyButton" to="." method="_on_store_sell_apply_button_mouse_entered"]
+[connection signal="mouse_exited" from="Right_Panel/StoreSellApplyButton" to="." method="_on_store_sell_apply_button_mouse_exited"]
+[connection signal="pressed" from="Right_Panel/StoreSellApplyButton" to="." method="_on_store_sell_apply_button_pressed"]
+[connection signal="mouse_entered" from="Right_Panel/StoreSellCancelButton" to="." method="_on_store_sell_cancel_button_mouse_entered"]
+[connection signal="mouse_exited" from="Right_Panel/StoreSellCancelButton" to="." method="_on_store_sell_cancel_button_mouse_exited"]
+[connection signal="pressed" from="Right_Panel/StoreSellCancelButton" to="." method="_on_store_sell_cancel_button_pressed"]
+[connection signal="mouse_entered" from="Left_Panel/WeaponSellButton" to="." method="_on_weapon_sell_button_mouse_entered"]
+[connection signal="mouse_exited" from="Left_Panel/WeaponSellButton" to="." method="_on_weapon_sell_button_mouse_exited"]
+[connection signal="pressed" from="Left_Panel/WeaponSellButton" to="." method="_on_weapon_sell_button_pressed"]
+[connection signal="mouse_entered" from="Left_Panel/AccessorySellButton" to="." method="_on_accessory_sell_button_mouse_entered"]
+[connection signal="mouse_exited" from="Left_Panel/AccessorySellButton" to="." method="_on_accessory_sell_button_mouse_exited"]
+[connection signal="pressed" from="Left_Panel/AccessorySellButton" to="." method="_on_accessory_sell_button_pressed"]
+[connection signal="mouse_entered" from="Left_Panel/HelmetSellButton" to="." method="_on_helmet_sell_button_mouse_entered"]
+[connection signal="mouse_exited" from="Left_Panel/HelmetSellButton" to="." method="_on_helmet_sell_button_mouse_exited"]
+[connection signal="pressed" from="Left_Panel/HelmetSellButton" to="." method="_on_helmet_sell_button_pressed"]

@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://bp0jqb1nvqxji"]
+
+[ext_resource type="Script" uid="uid://bnpol1c8fd4jt" path="res://Maintenance/store_sell_memory_inventory.gd" id="1_0tr2h"]
+
+[node name="Store_Sell_Memory_Inventory" type="GridContainer" unique_id=433938281]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 45
+theme_override_constants/v_separation = 45
+columns = 3
+script = ExtResource("1_0tr2h")

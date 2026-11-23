@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://slul887n7cv7"]
+
+[ext_resource type="Script" uid="uid://ee6bk5orh6kr" path="res://Maintenance/store_sell_weapon_inventory.gd" id="1_wg2ny"]
+
+[node name="Store_Sell_Weapon_Inventory" type="GridContainer" unique_id=433938281]
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 45
+theme_override_constants/v_separation = 45
+columns = 3
+script = ExtResource("1_wg2ny")

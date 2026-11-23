@@ -1,0 +1,1446 @@
+[gd_scene format=3 uid="uid://c457lubydt6yt"]
+
+[ext_resource type="Texture2D" uid="uid://ceha715dpl6d4" path="res://Art/ui/Strore_ui_box.png" id="2_nfgg6"]
+[ext_resource type="FontFile" uid="uid://d02hkgqq52dwf" path="res://Font/MonaS12.ttf" id="3_5o5bn"]
+[ext_resource type="Texture2D" uid="uid://djkrgp2sea7pr" path="res://Art/ui/normal_+.png" id="4_806mp"]
+[ext_resource type="Texture2D" uid="uid://c4eiiyc6ijauc" path="res://Art/ui/over_+.png" id="5_titgv"]
+[ext_resource type="Texture2D" uid="uid://c204muqf1y8b8" path="res://Art/ui/normal_-.png" id="6_luvx7"]
+[ext_resource type="Texture2D" uid="uid://bpcwwfmtl4xcp" path="res://Art/ui/over_-.png" id="7_lafjt"]
+[ext_resource type="Texture2D" uid="uid://sxi5c5bneki2" path="res://Art/ui/Strore_ui_ex_1.png" id="8_gdid3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2dd1r"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2dd1r"]
+texture = ExtResource("2_nfgg6")
+region_rect = Rect2(1908.0024, 1267, 107.99756, 27)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uit0i"]
+texture = ExtResource("2_nfgg6")
+region_rect = Rect2(1841, 1482, 239, 89)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xje1u"]
+texture = ExtResource("2_nfgg6")
+region_rect = Rect2(2181, 1482, 239, 89)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vijx5"]
+texture = ExtResource("2_nfgg6")
+texture_margin_left = 50.0
+region_rect = Rect2(6762, 120, 779, 310)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_cjn88"]
+texture = ExtResource("2_nfgg6")
+region_rect = Rect2(6762, 120, 779, 310)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2y4bs"]
+texture = ExtResource("2_nfgg6")
+region_rect = Rect2(2181, 1482, 239, 89)
+
+[node name="Player_Upgrade" type="Control" unique_id=629512587]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Arrow12" type="Sprite2D" parent="." unique_id=1489876671]
+position = Vector2(190, 42)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_nfgg6")
+region_enabled = true
+region_rect = Rect2(1907.6051, 1266.4908, 108.696655, 27.67627)
+
+[node name="Coin_After" type="Label" parent="." unique_id=1882930470]
+layout_mode = 0
+offset_left = 222.0
+offset_top = 30.0
+offset_right = 317.0
+offset_bottom = 57.0
+theme_override_colors/font_color = Color(0.54901963, 0.4509804, 0.29411766, 1)
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "100000000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Coin_Need_Text" type="Label" parent="." unique_id=1767155763]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 79.0
+offset_right = 152.0
+offset_bottom = 110.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "필요코인 : "
+
+[node name="Coin_Need" type="Label" parent="." unique_id=1194797663]
+layout_mode = 0
+offset_left = 255.0
+offset_top = 79.0
+offset_right = 368.0
+offset_bottom = 110.0
+theme_override_colors/font_color = Color(0.54901963, 0.4509804, 0.29411766, 1)
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "100000000"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Level_Text" type="Label" parent="." unique_id=208776368]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 110.0
+offset_right = 152.0
+offset_bottom = 141.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "레벨 : "
+
+[node name="Level" type="Label" parent="." unique_id=568405755]
+layout_mode = 0
+offset_left = 263.0
+offset_top = 110.0
+offset_right = 369.0
+offset_bottom = 141.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "100000"
+horizontal_alignment = 2
+
+[node name="Line1" type="Sprite2D" parent="." unique_id=346869629]
+position = Vector2(203.50006, 148.625)
+scale = Vector2(0.27999997, 0.39285713)
+texture = ExtResource("2_nfgg6")
+region_enabled = true
+region_rect = Rect2(1690, 131, 1225, 7)
+
+[node name="UP_HP_Text" type="Label" parent="." unique_id=290103062]
+layout_mode = 0
+offset_left = 46.000122
+offset_top = 169.0
+offset_right = 90.00012
+offset_bottom = 211.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "체력"
+vertical_alignment = 1
+
+[node name="Panel_HP" type="Panel" parent="." unique_id=548153628]
+layout_mode = 0
+offset_left = 182.00012
+offset_top = 169.0
+offset_right = 327.0
+offset_bottom = 211.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2dd1r")
+
+[node name="HP_Text" type="Label" parent="Panel_HP" unique_id=1519250115]
+layout_mode = 0
+offset_left = 57.0
+offset_right = 102.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HPUpButton" type="TextureButton" parent="Panel_HP" unique_id=621339440]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 1.5
+offset_right = 139.0
+offset_bottom = 38.5
+texture_normal = ExtResource("4_806mp")
+texture_hover = ExtResource("5_titgv")
+texture_disabled = ExtResource("4_806mp")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="HPDownButton" type="TextureButton" parent="Panel_HP" unique_id=79881994]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 1.5
+offset_right = 185.0
+offset_bottom = 38.5
+texture_normal = ExtResource("6_luvx7")
+texture_hover = ExtResource("7_lafjt")
+texture_disabled = ExtResource("6_luvx7")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="UP_MP_Text" type="Label" parent="." unique_id=1245144968]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 230.0
+offset_right = 112.0
+offset_bottom = 272.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "에너지"
+vertical_alignment = 1
+
+[node name="Panel_MP" type="Panel" parent="." unique_id=1254728120]
+layout_mode = 0
+offset_left = 182.00012
+offset_top = 230.0
+offset_right = 327.0
+offset_bottom = 272.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2dd1r")
+
+[node name="MP_Text" type="Label" parent="Panel_MP" unique_id=1710886908]
+layout_mode = 0
+offset_left = 57.0
+offset_right = 102.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MPUpButton" type="TextureButton" parent="Panel_MP" unique_id=1346663695]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 1.5
+offset_right = 139.0
+offset_bottom = 38.5
+texture_normal = ExtResource("4_806mp")
+texture_hover = ExtResource("5_titgv")
+texture_disabled = ExtResource("4_806mp")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MPDownButton" type="TextureButton" parent="Panel_MP" unique_id=2062886254]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 1.5
+offset_right = 185.0
+offset_bottom = 38.5
+texture_normal = ExtResource("6_luvx7")
+texture_hover = ExtResource("7_lafjt")
+texture_disabled = ExtResource("6_luvx7")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="UP_Defense_Text" type="Label" parent="." unique_id=871824496]
+layout_mode = 0
+offset_left = 46.000122
+offset_top = 278.0
+offset_right = 112.00012
+offset_bottom = 320.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "방어력"
+vertical_alignment = 1
+
+[node name="Panel_Defense" type="Panel" parent="." unique_id=766537174]
+layout_mode = 0
+offset_left = 182.00012
+offset_top = 278.0
+offset_right = 327.0
+offset_bottom = 320.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2dd1r")
+
+[node name="Defense_Text" type="Label" parent="Panel_Defense" unique_id=375236868]
+layout_mode = 0
+offset_left = 57.0
+offset_right = 102.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DefenseUpButton" type="TextureButton" parent="Panel_Defense" unique_id=683278807]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 1.5
+offset_right = 139.0
+offset_bottom = 38.5
+texture_normal = ExtResource("4_806mp")
+texture_hover = ExtResource("5_titgv")
+texture_disabled = ExtResource("4_806mp")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="DefenseDownButton" type="TextureButton" parent="Panel_Defense" unique_id=1366379097]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 1.5
+offset_right = 185.0
+offset_bottom = 38.5
+texture_normal = ExtResource("6_luvx7")
+texture_hover = ExtResource("7_lafjt")
+texture_disabled = ExtResource("6_luvx7")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="UP_Stamina_Text" type="Label" parent="." unique_id=191531401]
+layout_mode = 0
+offset_left = 46.000122
+offset_top = 332.0
+offset_right = 112.00012
+offset_bottom = 374.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "지구력"
+vertical_alignment = 1
+
+[node name="Panel_Stamina" type="Panel" parent="." unique_id=1033858738]
+layout_mode = 0
+offset_left = 182.00012
+offset_top = 332.0
+offset_right = 327.0
+offset_bottom = 374.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2dd1r")
+
+[node name="Stamina_Text" type="Label" parent="Panel_Stamina" unique_id=1548590951]
+layout_mode = 0
+offset_left = 57.0
+offset_right = 102.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StaminaUpButton" type="TextureButton" parent="Panel_Stamina" unique_id=1086151840]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 1.5
+offset_right = 139.0
+offset_bottom = 38.5
+texture_normal = ExtResource("4_806mp")
+texture_hover = ExtResource("5_titgv")
+texture_disabled = ExtResource("4_806mp")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="StaminaDownButton" type="TextureButton" parent="Panel_Stamina" unique_id=1432581766]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 1.5
+offset_right = 185.0
+offset_bottom = 38.5
+texture_normal = ExtResource("6_luvx7")
+texture_hover = ExtResource("7_lafjt")
+texture_disabled = ExtResource("6_luvx7")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="UP_Weight_Text" type="Label" parent="." unique_id=947193008]
+layout_mode = 0
+offset_left = 46.000122
+offset_top = 386.0
+offset_right = 90.00012
+offset_bottom = 428.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "중량"
+vertical_alignment = 1
+
+[node name="Panel_Weight" type="Panel" parent="." unique_id=2040921972]
+layout_mode = 0
+offset_left = 182.00012
+offset_top = 386.0
+offset_right = 327.0
+offset_bottom = 428.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2dd1r")
+
+[node name="Weight_Text" type="Label" parent="Panel_Weight" unique_id=462998143]
+layout_mode = 0
+offset_left = 57.0
+offset_right = 102.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="WeightUpButton" type="TextureButton" parent="Panel_Weight" unique_id=1859552361]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 1.5
+offset_right = 139.0
+offset_bottom = 38.5
+texture_normal = ExtResource("4_806mp")
+texture_hover = ExtResource("5_titgv")
+texture_disabled = ExtResource("4_806mp")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="WeightDownButton" type="TextureButton" parent="Panel_Weight" unique_id=180482046]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 1.5
+offset_right = 185.0
+offset_bottom = 38.5
+texture_normal = ExtResource("6_luvx7")
+texture_hover = ExtResource("7_lafjt")
+texture_disabled = ExtResource("6_luvx7")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="UP_PAttack_Text" type="Label" parent="." unique_id=201775718]
+layout_mode = 0
+offset_left = 46.000122
+offset_top = 440.0
+offset_right = 156.00012
+offset_bottom = 482.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "공격력"
+vertical_alignment = 1
+
+[node name="Panel_PAttack" type="Panel" parent="." unique_id=602983416]
+layout_mode = 0
+offset_left = 182.00012
+offset_top = 440.0
+offset_right = 327.0
+offset_bottom = 482.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2dd1r")
+
+[node name="PAttack_Text" type="Label" parent="Panel_PAttack" unique_id=1797343774]
+layout_mode = 0
+offset_left = 57.0
+offset_right = 102.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PAttackUpButton" type="TextureButton" parent="Panel_PAttack" unique_id=347235103]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 1.5
+offset_right = 139.0
+offset_bottom = 38.5
+texture_normal = ExtResource("4_806mp")
+texture_hover = ExtResource("5_titgv")
+texture_disabled = ExtResource("4_806mp")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="PAttackDownButton" type="TextureButton" parent="Panel_PAttack" unique_id=1478684419]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 1.5
+offset_right = 185.0
+offset_bottom = 38.5
+texture_normal = ExtResource("6_luvx7")
+texture_hover = ExtResource("7_lafjt")
+texture_disabled = ExtResource("6_luvx7")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="UP_Absorb_Text" type="Label" parent="." unique_id=662898231]
+layout_mode = 0
+offset_left = 46.000122
+offset_top = 548.0
+offset_right = 90.00012
+offset_bottom = 590.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "흡수"
+vertical_alignment = 1
+
+[node name="Panel_Absorb" type="Panel" parent="." unique_id=888973547]
+layout_mode = 0
+offset_left = 182.00012
+offset_top = 548.0
+offset_right = 327.0
+offset_bottom = 590.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2dd1r")
+
+[node name="Absorb_Text" type="Label" parent="Panel_Absorb" unique_id=529307717]
+layout_mode = 0
+offset_left = 57.0
+offset_right = 102.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AbsorbUpButton" type="TextureButton" parent="Panel_Absorb" unique_id=1959487865]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 1.5
+offset_right = 139.0
+offset_bottom = 38.5
+texture_normal = ExtResource("4_806mp")
+texture_hover = ExtResource("5_titgv")
+texture_disabled = ExtResource("4_806mp")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="AbsorbDownButton" type="TextureButton" parent="Panel_Absorb" unique_id=768257869]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 1.5
+offset_right = 185.0
+offset_bottom = 38.5
+texture_normal = ExtResource("6_luvx7")
+texture_hover = ExtResource("7_lafjt")
+texture_disabled = ExtResource("6_luvx7")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="UP_Mastery_Text" type="Label" parent="." unique_id=1355677608]
+layout_mode = 0
+offset_left = 46.000122
+offset_top = 602.0
+offset_right = 90.00012
+offset_bottom = 644.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "적응"
+vertical_alignment = 1
+
+[node name="Panel_Mastery" type="Panel" parent="." unique_id=459643073]
+layout_mode = 0
+offset_left = 182.00012
+offset_top = 602.0
+offset_right = 327.0
+offset_bottom = 644.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2dd1r")
+
+[node name="Mastery_Text" type="Label" parent="Panel_Mastery" unique_id=1794941961]
+layout_mode = 0
+offset_left = 57.0
+offset_right = 102.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MasteryUpButton" type="TextureButton" parent="Panel_Mastery" unique_id=2025263413]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 1.5
+offset_right = 139.0
+offset_bottom = 38.5
+texture_normal = ExtResource("4_806mp")
+texture_hover = ExtResource("5_titgv")
+texture_disabled = ExtResource("4_806mp")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="MasteryDownButton" type="TextureButton" parent="Panel_Mastery" unique_id=774734966]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 1.5
+offset_right = 185.0
+offset_bottom = 38.5
+texture_normal = ExtResource("6_luvx7")
+texture_hover = ExtResource("7_lafjt")
+texture_disabled = ExtResource("6_luvx7")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="UP_Luck_Text" type="Label" parent="." unique_id=944583008]
+layout_mode = 0
+offset_left = 46.0
+offset_top = 656.0
+offset_right = 90.0
+offset_bottom = 698.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "행운"
+vertical_alignment = 1
+
+[node name="Panel_Luck" type="Panel" parent="." unique_id=630765550]
+layout_mode = 0
+offset_left = 182.00012
+offset_top = 656.0
+offset_right = 327.0
+offset_bottom = 698.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2dd1r")
+
+[node name="Luck_Text" type="Label" parent="Panel_Luck" unique_id=333361311]
+layout_mode = 0
+offset_left = 57.0
+offset_right = 102.0
+offset_bottom = 42.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "100"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LuckUpButton" type="TextureButton" parent="Panel_Luck" unique_id=2019876626]
+layout_mode = 0
+offset_left = 102.0
+offset_top = 1.5
+offset_right = 139.0
+offset_bottom = 38.5
+texture_normal = ExtResource("4_806mp")
+texture_hover = ExtResource("5_titgv")
+texture_disabled = ExtResource("4_806mp")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="LuckDownButton" type="TextureButton" parent="Panel_Luck" unique_id=1946413386]
+layout_mode = 0
+offset_left = 148.0
+offset_top = 1.5
+offset_right = 185.0
+offset_bottom = 38.5
+texture_normal = ExtResource("6_luvx7")
+texture_hover = ExtResource("7_lafjt")
+texture_disabled = ExtResource("6_luvx7")
+ignore_texture_size = true
+stretch_mode = 0
+
+[node name="Label" type="Label" parent="." unique_id=1119892893]
+custom_minimum_size = Vector2(44, 31)
+layout_mode = 0
+offset_left = 179.0
+offset_top = 176.0
+offset_right = 223.0
+offset_bottom = 207.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "레벨"
+
+[node name="Label2" type="Label" parent="." unique_id=1917270988]
+custom_minimum_size = Vector2(44, 31)
+layout_mode = 0
+offset_left = 179.0
+offset_top = 230.0
+offset_right = 223.0
+offset_bottom = 261.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "레벨"
+vertical_alignment = 1
+
+[node name="Label3" type="Label" parent="." unique_id=1275631551]
+custom_minimum_size = Vector2(44, 31)
+layout_mode = 0
+offset_left = 179.0
+offset_top = 283.0
+offset_right = 223.0
+offset_bottom = 314.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "레벨"
+vertical_alignment = 1
+
+[node name="Label4" type="Label" parent="." unique_id=932260673]
+custom_minimum_size = Vector2(44, 31)
+layout_mode = 0
+offset_left = 179.0
+offset_top = 337.0
+offset_right = 223.0
+offset_bottom = 368.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "레벨"
+vertical_alignment = 1
+
+[node name="Label5" type="Label" parent="." unique_id=948444289]
+custom_minimum_size = Vector2(44, 31)
+layout_mode = 0
+offset_left = 179.0
+offset_top = 391.0
+offset_right = 223.0
+offset_bottom = 422.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "레벨"
+vertical_alignment = 1
+
+[node name="Label6" type="Label" parent="." unique_id=735230137]
+custom_minimum_size = Vector2(44, 31)
+layout_mode = 0
+offset_left = 179.0
+offset_top = 445.0
+offset_right = 223.0
+offset_bottom = 476.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "레벨"
+vertical_alignment = 1
+
+[node name="Label8" type="Label" parent="." unique_id=1257597964]
+custom_minimum_size = Vector2(44, 31)
+layout_mode = 0
+offset_left = 179.0
+offset_top = 553.0
+offset_right = 223.0
+offset_bottom = 584.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "레벨"
+vertical_alignment = 1
+
+[node name="Label9" type="Label" parent="." unique_id=1567156482]
+custom_minimum_size = Vector2(44, 31)
+layout_mode = 0
+offset_left = 179.0
+offset_top = 607.0
+offset_right = 223.0
+offset_bottom = 638.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "레벨"
+vertical_alignment = 1
+
+[node name="Label10" type="Label" parent="." unique_id=577207220]
+custom_minimum_size = Vector2(44, 31)
+layout_mode = 0
+offset_left = 179.0
+offset_top = 661.0
+offset_right = 223.0
+offset_bottom = 692.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 22
+text = "레벨"
+vertical_alignment = 1
+
+[node name="Line2" type="Sprite2D" parent="." unique_id=59707624]
+position = Vector2(203.5, 719)
+scale = Vector2(0.28, 0.393)
+texture = ExtResource("2_nfgg6")
+region_enabled = true
+region_rect = Rect2(1690, 131, 1225, 7)
+
+[node name="PlayerApplyButton" type="TextureButton" parent="." unique_id=994271401]
+layout_mode = 0
+offset_left = 67.0
+offset_top = 751.0
+offset_right = 187.0
+offset_bottom = 796.0
+
+[node name="PlayerApply_Normal" type="Sprite2D" parent="PlayerApplyButton" unique_id=465659886]
+position = Vector2(60, 23)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_nfgg6")
+region_enabled = true
+region_rect = Rect2(1841, 1482, 239, 89)
+
+[node name="PlayerApply_Over" type="Sprite2D" parent="PlayerApplyButton" unique_id=116915213]
+visible = false
+position = Vector2(60, 23)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_nfgg6")
+region_enabled = true
+region_rect = Rect2(2181, 1482, 239, 89)
+
+[node name="PlayerApply_Text" type="Label" parent="PlayerApplyButton" unique_id=647213721]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 45.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+text = "적용"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="PlayerResetButton" type="TextureButton" parent="." unique_id=1574143570]
+layout_mode = 0
+offset_left = 223.0
+offset_top = 751.0
+offset_right = 343.0
+offset_bottom = 796.0
+
+[node name="PlayerReset_Normal" type="Sprite2D" parent="PlayerResetButton" unique_id=2040681243]
+position = Vector2(60, 23)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_nfgg6")
+region_enabled = true
+region_rect = Rect2(1841, 1482, 239, 89)
+
+[node name="PlayerReset_Over" type="Sprite2D" parent="PlayerResetButton" unique_id=1427385099]
+visible = false
+position = Vector2(60, 23)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_nfgg6")
+region_enabled = true
+region_rect = Rect2(2181, 1482, 239, 89)
+
+[node name="PlayerReset_Text" type="Label" parent="PlayerResetButton" unique_id=777546085]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 45.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+text = "취소"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=853965332]
+visible = false
+self_modulate = Color(1, 1, 1, 0.49803922)
+z_index = 1
+position = Vector2(71, 450)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("8_gdid3")
+hframes = 3
+frame = 1
+
+[node name="Change_Text" type="VBoxContainer" parent="." unique_id=1822713586]
+layout_mode = 0
+offset_left = 392.0
+offset_top = 78.0
+offset_right = 557.0
+offset_bottom = 744.0
+theme_override_constants/separation = 0
+
+[node name="UP_HP_Text" type="Label" parent="Change_Text" unique_id=1089904845]
+custom_minimum_size = Vector2(163, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "최대체력"
+vertical_alignment = 1
+
+[node name="UP_MP_Text" type="Label" parent="Change_Text" unique_id=2049004682]
+custom_minimum_size = Vector2(163, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "최대마력"
+vertical_alignment = 1
+
+[node name="UP_Defense_Text" type="Label" parent="Change_Text" unique_id=319061856]
+custom_minimum_size = Vector2(163, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "방어력"
+vertical_alignment = 1
+
+[node name="UP_Stamina_Text" type="Label" parent="Change_Text" unique_id=908211312]
+custom_minimum_size = Vector2(163, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "지구력"
+vertical_alignment = 1
+
+[node name="UP_Speed_Text" type="Label" parent="Change_Text" unique_id=733665229]
+custom_minimum_size = Vector2(163, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "이동속도"
+vertical_alignment = 1
+
+[node name="UP_Weight_Text" type="Label" parent="Change_Text" unique_id=1238278898]
+custom_minimum_size = Vector2(163, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "중량"
+vertical_alignment = 1
+
+[node name="UP_PAttack_Text" type="Label" parent="Change_Text" unique_id=62080910]
+custom_minimum_size = Vector2(163, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "물리공격력"
+vertical_alignment = 1
+
+[node name="UP_MAttack_Text" type="Label" parent="Change_Text" unique_id=386351311]
+custom_minimum_size = Vector2(163, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "마법공격력"
+vertical_alignment = 1
+
+[node name="UP_Absorb_Text" type="Label" parent="Change_Text" unique_id=1757857178]
+custom_minimum_size = Vector2(163, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "흡수"
+vertical_alignment = 1
+
+[node name="UP_Mastery_Text" type="Label" parent="Change_Text" unique_id=1321289879]
+custom_minimum_size = Vector2(163, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "숙련도"
+vertical_alignment = 1
+
+[node name="UP_Luck_Text" type="Label" parent="Change_Text" unique_id=905383136]
+custom_minimum_size = Vector2(163, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "행운"
+vertical_alignment = 1
+
+[node name="UP_WAttack1_Text" type="Label" parent="Change_Text" unique_id=741804477]
+custom_minimum_size = Vector2(163, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "무기공격력1"
+vertical_alignment = 1
+
+[node name="UP_WAttack2_Text" type="Label" parent="Change_Text" unique_id=1009169958]
+custom_minimum_size = Vector2(163, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "무기공격력2"
+vertical_alignment = 1
+
+[node name="UP_WAttack3_Text" type="Label" parent="Change_Text" unique_id=426577165]
+custom_minimum_size = Vector2(163, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "무기공격력3"
+vertical_alignment = 1
+
+[node name="UP_WAttack4_Text" type="Label" parent="Change_Text" unique_id=2143579183]
+custom_minimum_size = Vector2(163, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "무기공격력4"
+vertical_alignment = 1
+
+[node name="UP_WAttack5_Text" type="Label" parent="Change_Text" unique_id=389269567]
+custom_minimum_size = Vector2(163, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "무기공격력5"
+vertical_alignment = 1
+
+[node name="UP_Reduce_Text" type="Label" parent="Change_Text" unique_id=1710132802]
+custom_minimum_size = Vector2(163, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "데미지 경감"
+vertical_alignment = 1
+
+[node name="UP_Reroll_Text" type="Label" parent="Change_Text" unique_id=1122824817]
+custom_minimum_size = Vector2(163, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "새로고침"
+vertical_alignment = 1
+
+[node name="Change_Before" type="VBoxContainer" parent="." unique_id=1333959297]
+layout_mode = 0
+offset_left = 552.0
+offset_top = 78.0
+offset_right = 660.0
+offset_bottom = 744.0
+theme_override_constants/separation = 0
+
+[node name="UP_HP_Before" type="Label" parent="Change_Before" unique_id=942360798]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UP_MP_Before" type="Label" parent="Change_Before" unique_id=692482866]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UP_Defense_Before" type="Label" parent="Change_Before" unique_id=376186927]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UP_Stamina_Before" type="Label" parent="Change_Before" unique_id=747902148]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UP_Speed_Before" type="Label" parent="Change_Before" unique_id=970321910]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UP_Weight_Before" type="Label" parent="Change_Before" unique_id=1789226180]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UP_PAttack_Before" type="Label" parent="Change_Before" unique_id=1825199266]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UP_MAttack_Before" type="Label" parent="Change_Before" unique_id=1326284817]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UP_Absorb_Before" type="Label" parent="Change_Before" unique_id=883763548]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UP_Mastery_Before" type="Label" parent="Change_Before" unique_id=1803270872]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UP_Luck_Before" type="Label" parent="Change_Before" unique_id=1753749700]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UP_WAttack1_Before" type="Label" parent="Change_Before" unique_id=1672417253]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UP_WAttack2_Before" type="Label" parent="Change_Before" unique_id=1251223092]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UP_WAttack3_Before" type="Label" parent="Change_Before" unique_id=1370569040]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UP_WAttack4_Before" type="Label" parent="Change_Before" unique_id=1408460431]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UP_WAttack5_Before" type="Label" parent="Change_Before" unique_id=990378143]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UP_Reduce_Before" type="Label" parent="Change_Before" unique_id=126755115]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UP_Reroll_Before" type="Label" parent="Change_Before" unique_id=557514804]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "3"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1639483164]
+layout_mode = 0
+offset_left = 662.0
+offset_top = 78.0
+offset_right = 717.0
+offset_bottom = 744.0
+size_flags_vertical = 3
+theme_override_constants/margin_top = 11
+
+[node name="Change_Arrow" type="VBoxContainer" parent="MarginContainer" unique_id=698640784]
+layout_mode = 2
+theme_override_constants/separation = 22
+
+[node name="Panel" type="Panel" parent="MarginContainer/Change_Arrow" unique_id=1766341319]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2dd1r")
+
+[node name="Panel2" type="Panel" parent="MarginContainer/Change_Arrow" unique_id=1232569815]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2dd1r")
+
+[node name="Panel3" type="Panel" parent="MarginContainer/Change_Arrow" unique_id=1190039971]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2dd1r")
+
+[node name="Panel4" type="Panel" parent="MarginContainer/Change_Arrow" unique_id=849069799]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2dd1r")
+
+[node name="Panel5" type="Panel" parent="MarginContainer/Change_Arrow" unique_id=905404105]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2dd1r")
+
+[node name="Panel6" type="Panel" parent="MarginContainer/Change_Arrow" unique_id=891895015]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2dd1r")
+
+[node name="Panel7" type="Panel" parent="MarginContainer/Change_Arrow" unique_id=1936776356]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2dd1r")
+
+[node name="Panel8" type="Panel" parent="MarginContainer/Change_Arrow" unique_id=93700136]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2dd1r")
+
+[node name="Panel9" type="Panel" parent="MarginContainer/Change_Arrow" unique_id=1720980332]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2dd1r")
+
+[node name="Panel10" type="Panel" parent="MarginContainer/Change_Arrow" unique_id=697909644]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2dd1r")
+
+[node name="Panel11" type="Panel" parent="MarginContainer/Change_Arrow" unique_id=1789326185]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2dd1r")
+
+[node name="Panel12" type="Panel" parent="MarginContainer/Change_Arrow" unique_id=335258859]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2dd1r")
+
+[node name="Panel13" type="Panel" parent="MarginContainer/Change_Arrow" unique_id=351014406]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2dd1r")
+
+[node name="Panel14" type="Panel" parent="MarginContainer/Change_Arrow" unique_id=211386593]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2dd1r")
+
+[node name="Panel15" type="Panel" parent="MarginContainer/Change_Arrow" unique_id=102434676]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2dd1r")
+
+[node name="Panel16" type="Panel" parent="MarginContainer/Change_Arrow" unique_id=2014940092]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2dd1r")
+
+[node name="Panel17" type="Panel" parent="MarginContainer/Change_Arrow" unique_id=400421572]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2dd1r")
+
+[node name="Panel18" type="Panel" parent="MarginContainer/Change_Arrow" unique_id=1995811481]
+custom_minimum_size = Vector2(0, 15)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_2dd1r")
+
+[node name="Change_After" type="VBoxContainer" parent="." unique_id=1786075005]
+layout_mode = 0
+offset_left = 719.0
+offset_top = 78.0
+offset_right = 826.0
+offset_bottom = 744.0
+theme_override_constants/separation = 0
+
+[node name="UP_HP_After" type="Label" parent="Change_After" unique_id=1249217758]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+
+[node name="UP_MP_After" type="Label" parent="Change_After" unique_id=1667140670]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+
+[node name="UP_Defense_After" type="Label" parent="Change_After" unique_id=1212185420]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+
+[node name="UP_Stamina_After" type="Label" parent="Change_After" unique_id=265481426]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+
+[node name="UP_Speed_After" type="Label" parent="Change_After" unique_id=1120220350]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+
+[node name="UP_Weight_After" type="Label" parent="Change_After" unique_id=721448271]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+
+[node name="UP_PAttack_After" type="Label" parent="Change_After" unique_id=1163123453]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+
+[node name="UP_MAttack_After" type="Label" parent="Change_After" unique_id=126977295]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+
+[node name="UP_Absorb_After" type="Label" parent="Change_After" unique_id=326128840]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+
+[node name="UP_Mastery_After" type="Label" parent="Change_After" unique_id=1792303241]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+
+[node name="UP_Luck_After" type="Label" parent="Change_After" unique_id=888279085]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+
+[node name="UP_WAttack1_After" type="Label" parent="Change_After" unique_id=636866677]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UP_WAttack2_After" type="Label" parent="Change_After" unique_id=327620486]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UP_WAttack3_After" type="Label" parent="Change_After" unique_id=1066134355]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UP_WAttack4_After" type="Label" parent="Change_After" unique_id=384032764]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UP_WAttack5_After" type="Label" parent="Change_After" unique_id=252075627]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UP_Reduce_After" type="Label" parent="Change_After" unique_id=133515271]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "100000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UP_Reroll_After" type="Label" parent="Change_After" unique_id=210130305]
+custom_minimum_size = Vector2(0, 37)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 26
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="." unique_id=1495600831]
+layout_mode = 0
+offset_left = 698.0
+offset_top = 752.0
+offset_right = 818.0
+offset_bottom = 797.0
+theme_override_styles/normal = SubResource("StyleBoxTexture_uit0i")
+theme_override_styles/hover = SubResource("StyleBoxTexture_xje1u")
+text = "포인트 초기화"
+
+[node name="Reset" type="Label" parent="." unique_id=2022042918]
+visible = false
+layout_mode = 0
+offset_top = 306.0
+offset_right = 850.0
+offset_bottom = 445.0
+theme_override_fonts/font = ExtResource("3_5o5bn")
+theme_override_font_sizes/font_size = 60
+theme_override_styles/normal = SubResource("StyleBoxTexture_vijx5")
+text = "모든 포인트가 초기화 됩니다."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Reset_Yes" type="Button" parent="Reset" unique_id=410795565]
+z_index = 2
+layout_mode = 0
+offset_left = 145.0
+offset_top = 182.0
+offset_right = 323.0
+offset_bottom = 327.0
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxTexture_cjn88")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2y4bs")
+text = "YES"
+
+[node name="Reset_No" type="Button" parent="Reset" unique_id=541120260]
+z_index = 2
+layout_mode = 0
+offset_left = 523.0
+offset_top = 182.0
+offset_right = 688.0
+offset_bottom = 327.0
+theme_override_font_sizes/font_size = 100
+theme_override_styles/normal = SubResource("StyleBoxTexture_cjn88")
+theme_override_styles/hover = SubResource("StyleBoxTexture_2y4bs")
+text = "NO"
+
+[connection signal="pressed" from="Panel_HP/HPUpButton" to="." method="_on_hp_up_button_pressed"]
+[connection signal="pressed" from="Panel_HP/HPDownButton" to="." method="_on_hp_down_button_pressed"]
+[connection signal="pressed" from="Panel_MP/MPUpButton" to="." method="_on_mp_up_button_pressed"]
+[connection signal="pressed" from="Panel_MP/MPDownButton" to="." method="_on_mp_down_button_pressed"]
+[connection signal="pressed" from="Panel_Defense/DefenseUpButton" to="." method="_on_defense_up_button_pressed"]
+[connection signal="pressed" from="Panel_Defense/DefenseDownButton" to="." method="_on_defense_down_button_pressed"]
+[connection signal="pressed" from="Panel_Stamina/StaminaUpButton" to="." method="_on_stamina_up_button_pressed"]
+[connection signal="pressed" from="Panel_Stamina/StaminaDownButton" to="." method="_on_stamina_down_button_pressed"]
+[connection signal="pressed" from="Panel_Weight/WeightUpButton" to="." method="_on_weight_up_button_pressed"]
+[connection signal="pressed" from="Panel_Weight/WeightDownButton" to="." method="_on_weight_down_button_pressed"]
+[connection signal="pressed" from="Panel_PAttack/PAttackUpButton" to="." method="_on_p_attack_up_button_pressed"]
+[connection signal="pressed" from="Panel_PAttack/PAttackDownButton" to="." method="_on_p_attack_down_button_pressed"]
+[connection signal="pressed" from="Panel_Absorb/AbsorbUpButton" to="." method="_on_absorb_up_button_pressed"]
+[connection signal="pressed" from="Panel_Absorb/AbsorbDownButton" to="." method="_on_absorb_down_button_pressed"]
+[connection signal="pressed" from="Panel_Mastery/MasteryUpButton" to="." method="_on_mastery_up_button_pressed"]
+[connection signal="pressed" from="Panel_Mastery/MasteryDownButton" to="." method="_on_mastery_down_button_pressed"]
+[connection signal="pressed" from="Panel_Luck/LuckUpButton" to="." method="_on_luck_up_button_pressed"]
+[connection signal="pressed" from="Panel_Luck/LuckDownButton" to="." method="_on_luck_down_button_pressed"]
+[connection signal="mouse_entered" from="PlayerApplyButton" to="." method="_on_player_apply_button_mouse_entered"]
+[connection signal="mouse_exited" from="PlayerApplyButton" to="." method="_on_player_apply_button_mouse_exited"]
+[connection signal="pressed" from="PlayerApplyButton" to="." method="_on_player_apply_button_pressed"]
+[connection signal="mouse_entered" from="PlayerResetButton" to="." method="_on_player_reset_button_mouse_entered"]
+[connection signal="mouse_exited" from="PlayerResetButton" to="." method="_on_player_reset_button_mouse_exited"]
+[connection signal="pressed" from="PlayerResetButton" to="." method="_on_player_reset_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Reset/Reset_Yes" to="." method="_on_reset_yes_pressed"]
+[connection signal="pressed" from="Reset/Reset_No" to="." method="_on_reset_no_pressed"]

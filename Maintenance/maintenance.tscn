@@ -1,0 +1,232 @@
+[gd_scene format=3 uid="uid://0dawsj42hbnb"]
+
+[ext_resource type="Script" uid="uid://dv3qv02ennuj7" path="res://Maintenance/maintenance.gd" id="1_6btyb"]
+[ext_resource type="Texture2D" uid="uid://drp54yxgabd2p" path="res://Art/ui/Strore_ui_ex_2.png" id="2_4btjc"]
+[ext_resource type="Texture2D" uid="uid://ceha715dpl6d4" path="res://Art/ui/Strore_ui_box.png" id="3_6kxi0"]
+[ext_resource type="Texture2D" uid="uid://fmwkfn02ak03" path="res://Art/item/soul_coin.png" id="4_cmbbc"]
+[ext_resource type="FontFile" uid="uid://d02hkgqq52dwf" path="res://Font/MonaS12.ttf" id="5_j5k7q"]
+[ext_resource type="PackedScene" uid="uid://c457lubydt6yt" path="res://Maintenance/Player_Upgrade/player_upgrade.tscn" id="6_02nj3"]
+[ext_resource type="PackedScene" uid="uid://cc4buvxkblwfk" path="res://Maintenance/Store_Buy/store_buy.tscn" id="7_rmtw6"]
+[ext_resource type="PackedScene" uid="uid://fobd4oj3ly1q" path="res://Maintenance/Weapon_Upgrade/weapon_upgrade.tscn" id="8_trey3"]
+[ext_resource type="PackedScene" uid="uid://8fd7278sroa1" path="res://Maintenance/Potion/potion.tscn" id="9_7eien"]
+[ext_resource type="PackedScene" uid="uid://frhkhfbpsgmd" path="res://Maintenance/Store_Sell/store_sell.tscn" id="10_y5cgj"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tgjno"]
+texture = ExtResource("3_6kxi0")
+region_rect = Rect2(7858, 54, 1685, 1709)
+
+[node name="Maintenance" type="CanvasLayer" unique_id=1371315722]
+script = ExtResource("1_6btyb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=924255996]
+visible = false
+self_modulate = Color(1, 1, 1, 0.49803922)
+z_index = 1
+position = Vector2(800, 450)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_4btjc")
+hframes = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=943722334]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_top = 36
+theme_override_constants/margin_right = 28
+theme_override_constants/margin_bottom = 10
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=254282071]
+custom_minimum_size = Vector2(843, 0)
+layout_mode = 2
+size_flags_horizontal = 8
+theme_override_styles/panel = SubResource("StyleBoxTexture_tgjno")
+
+[node name="PlayerButton" type="TextureButton" parent="MarginContainer/Panel" unique_id=1721853576]
+layout_mode = 0
+offset_left = -53.0
+offset_top = 29.0
+offset_right = 4.0
+offset_bottom = 116.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Player_Normal" type="Sprite2D" parent="MarginContainer/Panel/PlayerButton" unique_id=387569783]
+position = Vector2(28.5, 43)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_6kxi0")
+region_enabled = true
+region_rect = Rect2(212, 730, 114, 173)
+
+[node name="Player_Over" type="Sprite2D" parent="MarginContainer/Panel/PlayerButton" unique_id=1574086821]
+visible = false
+position = Vector2(28.5, 43)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_6kxi0")
+region_enabled = true
+region_rect = Rect2(428, 730, 114, 173)
+
+[node name="StoreBuyButton" type="TextureButton" parent="MarginContainer/Panel" unique_id=2123388122]
+layout_mode = 0
+offset_left = -53.0
+offset_top = 117.0
+offset_right = 4.0
+offset_bottom = 204.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Buy_Normal" type="Sprite2D" parent="MarginContainer/Panel/StoreBuyButton" unique_id=1011843679]
+position = Vector2(28.5, 43)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_6kxi0")
+region_enabled = true
+region_rect = Rect2(212, 905, 114, 173)
+
+[node name="Buy_Over" type="Sprite2D" parent="MarginContainer/Panel/StoreBuyButton" unique_id=1721430403]
+visible = false
+position = Vector2(28.5, 43)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_6kxi0")
+region_enabled = true
+region_rect = Rect2(429, 905, 114, 173)
+
+[node name="WeaponButton" type="TextureButton" parent="MarginContainer/Panel" unique_id=118788250]
+layout_mode = 0
+offset_left = -53.0
+offset_top = 204.0
+offset_right = 4.0
+offset_bottom = 291.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Weapon_Normal" type="Sprite2D" parent="MarginContainer/Panel/WeaponButton" unique_id=315770229]
+position = Vector2(28.5, 43)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_6kxi0")
+region_enabled = true
+region_rect = Rect2(212, 1080, 114, 173)
+
+[node name="Weapon_Over" type="Sprite2D" parent="MarginContainer/Panel/WeaponButton" unique_id=307337652]
+visible = false
+position = Vector2(28.5, 43)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_6kxi0")
+region_enabled = true
+region_rect = Rect2(428, 1080, 114, 173)
+
+[node name="PotionButton" type="TextureButton" parent="MarginContainer/Panel" unique_id=1959861493]
+layout_mode = 0
+offset_left = -53.0
+offset_top = 292.0
+offset_right = 4.0
+offset_bottom = 379.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Potion_Normal" type="Sprite2D" parent="MarginContainer/Panel/PotionButton" unique_id=1048571018]
+position = Vector2(28.5, 43)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_6kxi0")
+region_enabled = true
+region_rect = Rect2(212, 1255, 114, 173)
+
+[node name="Potion_Over" type="Sprite2D" parent="MarginContainer/Panel/PotionButton" unique_id=1670932301]
+visible = false
+position = Vector2(28.5, 43)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_6kxi0")
+region_enabled = true
+region_rect = Rect2(428, 1255, 114, 173)
+
+[node name="StoreSellButton" type="TextureButton" parent="MarginContainer/Panel" unique_id=504794101]
+layout_mode = 0
+offset_left = -53.0
+offset_top = 380.0
+offset_right = 4.0
+offset_bottom = 467.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+
+[node name="Sell_Normal" type="Sprite2D" parent="MarginContainer/Panel/StoreSellButton" unique_id=1902442956]
+position = Vector2(28.5, 43)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_6kxi0")
+region_enabled = true
+region_rect = Rect2(212, 1431, 114, 173)
+
+[node name="Sell_Over" type="Sprite2D" parent="MarginContainer/Panel/StoreSellButton" unique_id=185081941]
+visible = false
+position = Vector2(28.5, 43)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("3_6kxi0")
+region_enabled = true
+region_rect = Rect2(428, 1431, 114, 173)
+
+[node name="SoulStone" type="Sprite2D" parent="MarginContainer/Panel" unique_id=1202107798]
+position = Vector2(42, 41)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("4_cmbbc")
+
+[node name="SoulStone_Text" type="Label" parent="MarginContainer/Panel" unique_id=1374144664]
+layout_mode = 0
+offset_left = 62.0
+offset_top = 29.0
+offset_right = 145.0
+offset_bottom = 52.0
+theme_override_colors/font_color = Color(0.54901963, 0.4509804, 0.29411766, 1)
+theme_override_fonts/font = ExtResource("5_j5k7q")
+theme_override_font_sizes/font_size = 22
+text = "100000000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Player_Upgrade" parent="MarginContainer/Panel" unique_id=629512587 instance=ExtResource("6_02nj3")]
+layout_mode = 1
+
+[node name="Store_Buy" parent="MarginContainer/Panel" unique_id=479564103 instance=ExtResource("7_rmtw6")]
+visible = false
+layout_mode = 0
+
+[node name="Weapon_Upgrade" parent="MarginContainer/Panel" unique_id=2058134427 instance=ExtResource("8_trey3")]
+visible = false
+layout_mode = 0
+
+[node name="Potion" parent="MarginContainer/Panel" unique_id=1955637590 instance=ExtResource("9_7eien")]
+visible = false
+layout_mode = 0
+
+[node name="Store_Sell" parent="MarginContainer/Panel" unique_id=970076827 instance=ExtResource("10_y5cgj")]
+visible = false
+layout_mode = 0
+
+[node name="Blocker" type="Control" parent="." unique_id=1651530512]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 2.0
+offset_right = 1602.0
+offset_bottom = 900.0
+
+[node name="Button" type="Button" parent="." unique_id=856749231]
+offset_left = 1497.0
+offset_top = 3.0
+offset_right = 1596.0
+offset_bottom = 34.0
+text = "나가기"
+
+[connection signal="mouse_entered" from="MarginContainer/Panel/PlayerButton" to="." method="_on_player_button_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/Panel/PlayerButton" to="." method="_on_player_button_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/Panel/PlayerButton" to="." method="_on_player_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/Panel/StoreBuyButton" to="." method="_on_store_buy_button_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/Panel/StoreBuyButton" to="." method="_on_store_buy_button_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/Panel/StoreBuyButton" to="." method="_on_store_buy_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/Panel/WeaponButton" to="." method="_on_weapon_button_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/Panel/WeaponButton" to="." method="_on_weapon_button_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/Panel/WeaponButton" to="." method="_on_weapon_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/Panel/PotionButton" to="." method="_on_potion_button_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/Panel/PotionButton" to="." method="_on_potion_button_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/Panel/PotionButton" to="." method="_on_potion_button_pressed"]
+[connection signal="mouse_entered" from="MarginContainer/Panel/StoreSellButton" to="." method="_on_store_sell_button_mouse_entered"]
+[connection signal="mouse_exited" from="MarginContainer/Panel/StoreSellButton" to="." method="_on_store_sell_button_mouse_exited"]
+[connection signal="pressed" from="MarginContainer/Panel/StoreSellButton" to="." method="_on_store_sell_button_pressed"]
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

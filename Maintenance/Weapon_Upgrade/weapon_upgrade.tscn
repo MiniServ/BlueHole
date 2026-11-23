@@ -1,0 +1,415 @@
+[gd_scene format=3 uid="uid://fobd4oj3ly1q"]
+
+[ext_resource type="Script" uid="uid://ddynfal4lokqp" path="res://Maintenance/Weapon_Upgrade/weapon_upgrade.gd" id="1_c44b2"]
+[ext_resource type="Texture2D" uid="uid://ceha715dpl6d4" path="res://Art/ui/Strore_ui_box.png" id="1_iihsu"]
+[ext_resource type="FontFile" uid="uid://d02hkgqq52dwf" path="res://Font/MonaS12.ttf" id="3_ax3bx"]
+[ext_resource type="Texture2D" uid="uid://3bkplboh8428" path="res://Art/ui/player_ui_box.png" id="3_vpy8x"]
+[ext_resource type="PackedScene" uid="uid://cwjl5fljlag73" path="res://Maintenance/Weapon_Upgrade/weapon_upgrade_inventory.tscn" id="5_ax3bx"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kuy1h"]
+texture = ExtResource("1_iihsu")
+region_rect = Rect2(1692, 316, 263, 263)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_fc6nv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.54901963, 0.4509804, 0.29411766, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2dd1r"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8aw1e"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_c44b2"]
+texture = ExtResource("1_iihsu")
+region_rect = Rect2(3200, 54, 1338, 1709)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_mt6bs"]
+texture = ExtResource("3_vpy8x")
+texture_margin_top = 2.0
+texture_margin_bottom = 2.0
+expand_margin_left = 1.0
+expand_margin_right = 20.0
+region_rect = Rect2(2044, 180, 52, 110)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_7abbm"]
+texture = ExtResource("3_vpy8x")
+texture_margin_top = 2.0
+texture_margin_bottom = 2.0
+expand_margin_left = 1.0
+expand_margin_right = 20.0
+region_rect = Rect2(2044, 180, 52, 110)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gv815"]
+texture = ExtResource("3_vpy8x")
+texture_margin_top = 2.0
+texture_margin_bottom = 2.0
+expand_margin_left = 1.0
+expand_margin_right = 20.0
+region_rect = Rect2(2044, 180, 52, 110)
+modulate_color = Color(1, 1, 1, 0.7529412)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eerag"]
+texture = ExtResource("3_vpy8x")
+region_rect = Rect2(2154, 148, 36, 1560)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_05fe2"]
+content_margin_left = 4.0
+content_margin_top = 4.0
+content_margin_right = 4.0
+content_margin_bottom = 4.0
+bg_color = Color(1, 1, 1, 0.75)
+draw_center = false
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+corner_detail = 5
+expand_margin_left = 2.0
+expand_margin_top = 2.0
+expand_margin_right = 2.0
+expand_margin_bottom = 2.0
+
+[sub_resource type="Theme" id="Theme_ax3bx"]
+VScrollBar/constants/padding_right = 19
+VScrollBar/styles/grabber = SubResource("StyleBoxTexture_mt6bs")
+VScrollBar/styles/grabber_highlight = SubResource("StyleBoxTexture_7abbm")
+VScrollBar/styles/grabber_pressed = SubResource("StyleBoxTexture_gv815")
+VScrollBar/styles/scroll = SubResource("StyleBoxTexture_eerag")
+VScrollBar/styles/scroll_focus = SubResource("StyleBoxFlat_05fe2")
+
+[node name="Weapon_Upgrade" type="Control" unique_id=838178555]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_c44b2")
+
+[node name="Right_Panel" type="Panel" parent="." unique_id=940299443]
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = -728.0
+offset_top = -34.0
+offset_right = -688.0
+offset_bottom = 6.0
+
+[node name="Panel" type="Panel" parent="Right_Panel" unique_id=1205977521]
+layout_mode = 0
+offset_left = 1075.5
+offset_top = 136.0
+offset_right = 1206.5
+offset_bottom = 268.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_kuy1h")
+
+[node name="WeaponUpTexture" type="TextureRect" parent="Right_Panel/Panel" unique_id=1132585318]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+expand_mode = 1
+stretch_mode = 5
+
+[node name="WeaponUpPanel" type="Panel" parent="Right_Panel/Panel" unique_id=1029600893]
+visible = false
+layout_mode = 0
+offset_right = 131.0
+offset_bottom = 132.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_fc6nv")
+
+[node name="WeaponUpTextureButton" type="TextureButton" parent="Right_Panel/Panel" unique_id=202180679]
+z_index = 1
+layout_mode = 0
+offset_right = 132.0
+offset_bottom = 132.0
+
+[node name="WeaponUpButton" type="TextureButton" parent="Right_Panel" unique_id=924817932]
+layout_mode = 0
+offset_left = 1081.0
+offset_top = 358.0
+offset_right = 1201.0
+offset_bottom = 403.0
+
+[node name="WeaponUp_Normal" type="Sprite2D" parent="Right_Panel/WeaponUpButton" unique_id=452956906]
+position = Vector2(60, 23)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_iihsu")
+region_enabled = true
+region_rect = Rect2(1841, 1353, 239, 89)
+
+[node name="WeaponUp_Over" type="Sprite2D" parent="Right_Panel/WeaponUpButton" unique_id=867410737]
+visible = false
+position = Vector2(60, 23)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_iihsu")
+region_enabled = true
+region_rect = Rect2(2181, 1353, 239, 89)
+
+[node name="Line" type="Sprite2D" parent="Right_Panel" unique_id=363735449]
+position = Vector2(1141.0001, 487.99994)
+scale = Vector2(0.5985714, 0.57142866)
+texture = ExtResource("1_iihsu")
+region_enabled = true
+region_rect = Rect2(1690, 131, 1225, 7)
+
+[node name="Right_Under_Upgrade_Panel" type="Panel" parent="Right_Panel" unique_id=965418340]
+layout_mode = 0
+offset_left = 774.5
+offset_top = 490.0
+offset_right = 1507.5
+offset_bottom = 882.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2dd1r")
+
+[node name="HBox_Before_Name" type="HBoxContainer" parent="Right_Panel/Right_Under_Upgrade_Panel" unique_id=1644820537]
+layout_mode = 0
+offset_left = 104.5
+offset_top = 101.0
+offset_right = 234.5
+offset_bottom = 138.0
+
+[node name="Before_Name" type="Label" parent="Right_Panel/Right_Under_Upgrade_Panel/HBox_Before_Name" unique_id=1479567029]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ax3bx")
+theme_override_font_sizes/font_size = 26
+text = "롱소드 +"
+vertical_alignment = 1
+
+[node name="Before_Upgrade" type="Label" parent="Right_Panel/Right_Under_Upgrade_Panel/HBox_Before_Name" unique_id=1401841256]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ax3bx")
+theme_override_font_sizes/font_size = 26
+text = "10"
+vertical_alignment = 1
+
+[node name="HBox_Before_Attack" type="HBoxContainer" parent="Right_Panel/Right_Under_Upgrade_Panel" unique_id=393753058]
+layout_mode = 0
+offset_left = 104.5
+offset_top = 178.0
+offset_right = 291.5
+offset_bottom = 215.0
+theme_override_constants/separation = 0
+
+[node name="Before_Attack_Text" type="Label" parent="Right_Panel/Right_Under_Upgrade_Panel/HBox_Before_Attack" unique_id=489974138]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ax3bx")
+theme_override_font_sizes/font_size = 26
+text = "무기공격력 : "
+vertical_alignment = 1
+
+[node name="Before_Attack" type="Label" parent="Right_Panel/Right_Under_Upgrade_Panel/HBox_Before_Attack" unique_id=274548512]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ax3bx")
+theme_override_font_sizes/font_size = 26
+text = "100"
+vertical_alignment = 1
+
+[node name="HBox_Before_Amount" type="HBoxContainer" parent="Right_Panel/Right_Under_Upgrade_Panel" unique_id=1689183329]
+layout_mode = 0
+offset_left = 104.5
+offset_top = 255.0
+offset_right = 252.5
+offset_bottom = 292.0
+theme_override_constants/separation = 0
+
+[node name="Before_Amount_Text" type="Label" parent="Right_Panel/Right_Under_Upgrade_Panel/HBox_Before_Amount" unique_id=485851109]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ax3bx")
+theme_override_font_sizes/font_size = 26
+text = "초기 개수 : "
+vertical_alignment = 1
+
+[node name="Before_Amount" type="Label" parent="Right_Panel/Right_Under_Upgrade_Panel/HBox_Before_Amount" unique_id=1498191378]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ax3bx")
+theme_override_font_sizes/font_size = 26
+text = "2"
+vertical_alignment = 1
+
+[node name="Arrow" type="Sprite2D" parent="Right_Panel/Right_Under_Upgrade_Panel" unique_id=131032118]
+position = Vector2(366.5, 204)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_iihsu")
+region_enabled = true
+region_rect = Rect2(1907.5863, 1267, 108.4137, 27)
+
+[node name="Right_Under_Upgrade_After_Panel" type="Panel" parent="Right_Panel/Right_Under_Upgrade_Panel" unique_id=304470396]
+layout_mode = 0
+offset_left = 441.5
+offset_top = 101.0
+offset_right = 638.5
+offset_bottom = 292.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_8aw1e")
+
+[node name="HBox_After_Name" type="HBoxContainer" parent="Right_Panel/Right_Under_Upgrade_Panel/Right_Under_Upgrade_After_Panel" unique_id=1303082008]
+layout_mode = 0
+offset_right = 130.0
+offset_bottom = 37.0
+
+[node name="After_Name" type="Label" parent="Right_Panel/Right_Under_Upgrade_Panel/Right_Under_Upgrade_After_Panel/HBox_After_Name" unique_id=1041476546]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.54901963, 0.4509804, 0.29411766, 1)
+theme_override_fonts/font = ExtResource("3_ax3bx")
+theme_override_font_sizes/font_size = 26
+text = "롱소드 +"
+vertical_alignment = 1
+
+[node name="After_Upgrade" type="Label" parent="Right_Panel/Right_Under_Upgrade_Panel/Right_Under_Upgrade_After_Panel/HBox_After_Name" unique_id=824094783]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.54901963, 0.4509804, 0.29411766, 1)
+theme_override_fonts/font = ExtResource("3_ax3bx")
+theme_override_font_sizes/font_size = 26
+text = "11"
+vertical_alignment = 1
+
+[node name="HBox_After_Attack" type="HBoxContainer" parent="Right_Panel/Right_Under_Upgrade_Panel/Right_Under_Upgrade_After_Panel" unique_id=523591584]
+layout_mode = 0
+offset_top = 77.0
+offset_right = 191.0
+offset_bottom = 114.0
+theme_override_constants/separation = 0
+
+[node name="After_Attack_Text" type="Label" parent="Right_Panel/Right_Under_Upgrade_Panel/Right_Under_Upgrade_After_Panel/HBox_After_Attack" unique_id=1291850406]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.54901963, 0.4509804, 0.29411766, 1)
+theme_override_fonts/font = ExtResource("3_ax3bx")
+theme_override_font_sizes/font_size = 26
+text = "무기공격력 : "
+vertical_alignment = 1
+
+[node name="After_Attack" type="Label" parent="Right_Panel/Right_Under_Upgrade_Panel/Right_Under_Upgrade_After_Panel/HBox_After_Attack" unique_id=106749540]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.54901963, 0.4509804, 0.29411766, 1)
+theme_override_fonts/font = ExtResource("3_ax3bx")
+theme_override_font_sizes/font_size = 26
+text = "999"
+vertical_alignment = 1
+
+[node name="HBox_After_Amount" type="HBoxContainer" parent="Right_Panel/Right_Under_Upgrade_Panel/Right_Under_Upgrade_After_Panel" unique_id=1848557481]
+layout_mode = 0
+offset_top = 154.0
+offset_right = 148.0
+offset_bottom = 191.0
+theme_override_constants/separation = 0
+
+[node name="After_Amount_Text" type="Label" parent="Right_Panel/Right_Under_Upgrade_Panel/Right_Under_Upgrade_After_Panel/HBox_After_Amount" unique_id=1185428378]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.54901963, 0.4509804, 0.29411766, 1)
+theme_override_fonts/font = ExtResource("3_ax3bx")
+theme_override_font_sizes/font_size = 26
+text = "초기 개수 : "
+vertical_alignment = 1
+
+[node name="After_Amount" type="Label" parent="Right_Panel/Right_Under_Upgrade_Panel/Right_Under_Upgrade_After_Panel/HBox_After_Amount" unique_id=415705070]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.54901963, 0.4509804, 0.29411766, 1)
+theme_override_fonts/font = ExtResource("3_ax3bx")
+theme_override_font_sizes/font_size = 26
+text = "5"
+vertical_alignment = 1
+
+[node name="Right_Under_Upgrade_MAX" type="Label" parent="Right_Panel/Right_Under_Upgrade_Panel" unique_id=87551663]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 153.5
+offset_top = -30.0
+offset_right = 193.5
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0.54901963, 0.4509804, 0.29411766, 1)
+theme_override_fonts/font = ExtResource("3_ax3bx")
+theme_override_font_sizes/font_size = 52
+text = "최대 강화"
+
+[node name="Right_Under_Panel" type="Panel" parent="Right_Panel" unique_id=530675484]
+visible = false
+layout_mode = 0
+offset_left = 774.5
+offset_top = 490.0
+offset_right = 1507.5
+offset_bottom = 882.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_2dd1r")
+
+[node name="Right_Under_Text" type="Label" parent="Right_Panel/Right_Under_Panel" unique_id=837860441]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -242.0
+offset_top = -29.5
+offset_right = 242.0
+offset_bottom = 29.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("3_ax3bx")
+theme_override_font_sizes/font_size = 50
+text = "무기를 선택해 주세요"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Left_Panel" type="Panel" parent="." unique_id=354806779]
+layout_mode = 0
+offset_left = -1398.0
+offset_top = 3.0
+offset_right = -729.0
+offset_bottom = 858.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_c44b2")
+
+[node name="WeaponUp" type="Sprite2D" parent="Left_Panel" unique_id=1747172605]
+position = Vector2(317, 57)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_iihsu")
+region_enabled = true
+region_rect = Rect2(107, 344, 51, 144)
+
+[node name="Line" type="Sprite2D" parent="Left_Panel" unique_id=2105168244]
+position = Vector2(330.00003, 104)
+scale = Vector2(0.49959186, 0.57142866)
+texture = ExtResource("1_iihsu")
+region_enabled = true
+region_rect = Rect2(1690, 131, 1225, 7)
+
+[node name="MarginContainer" type="MarginContainer" parent="Left_Panel" unique_id=1138541939]
+layout_mode = 0
+offset_left = 0.997
+offset_top = 131.337
+offset_right = 652.016
+offset_bottom = 827.50195
+theme_override_constants/margin_left = 85
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Left_Panel/MarginContainer" unique_id=843269169]
+layout_mode = 2
+
+[node name="Item_Name" type="Label" parent="Left_Panel/MarginContainer/VBoxContainer" unique_id=107960207]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_ax3bx")
+theme_override_font_sizes/font_size = 26
+text = "창"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Left_Panel/MarginContainer/VBoxContainer" unique_id=1251048300]
+layout_mode = 2
+size_flags_vertical = 3
+theme = SubResource("Theme_ax3bx")
+
+[node name="Store_Up_Weapon_Inventory" parent="Left_Panel/MarginContainer/VBoxContainer/ScrollContainer" unique_id=433938281 instance=ExtResource("5_ax3bx")]
+layout_mode = 2
+
+[connection signal="mouse_entered" from="Right_Panel/Panel/WeaponUpTextureButton" to="." method="_on_weapon_up_texture_button_mouse_entered"]
+[connection signal="mouse_exited" from="Right_Panel/Panel/WeaponUpTextureButton" to="." method="_on_weapon_up_texture_button_mouse_exited"]
+[connection signal="pressed" from="Right_Panel/Panel/WeaponUpTextureButton" to="." method="_on_weapon_up_texture_button_pressed"]
+[connection signal="mouse_entered" from="Right_Panel/WeaponUpButton" to="." method="_on_weapon_up_button_mouse_entered"]
+[connection signal="mouse_exited" from="Right_Panel/WeaponUpButton" to="." method="_on_weapon_up_button_mouse_exited"]
+[connection signal="pressed" from="Right_Panel/WeaponUpButton" to="." method="_on_weapon_up_button_pressed"]

@@ -1,0 +1,143 @@
+[gd_scene format=3 uid="uid://cc4buvxkblwfk"]
+
+[ext_resource type="Script" uid="uid://bhi6on7jna60g" path="res://Maintenance/store_buy.gd" id="1_ot8bd"]
+[ext_resource type="Texture2D" uid="uid://ceha715dpl6d4" path="res://Art/ui/Strore_ui_box.png" id="1_vri85"]
+[ext_resource type="FontFile" uid="uid://d02hkgqq52dwf" path="res://Font/MonaS12.ttf" id="3_ot8bd"]
+[ext_resource type="Theme" uid="uid://bkmmg6ftncnjr" path="res://Theme/scroll_theme.tres" id="4_ot8bd"]
+
+[node name="Store_Buy" type="Control" unique_id=1974663687]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_ot8bd")
+
+[node name="Arrow12" type="Sprite2D" parent="." unique_id=1599124763]
+position = Vector2(190.27754, 42)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_vri85")
+region_enabled = true
+region_rect = Rect2(1907.6051, 1266.4908, 108.696655, 27.67627)
+
+[node name="Coin_After" type="Label" parent="." unique_id=1544839604]
+layout_mode = 0
+offset_left = 222.27753
+offset_top = 30.0
+offset_right = 317.27753
+offset_bottom = 57.0
+theme_override_colors/font_color = Color(0.54901963, 0.4509804, 0.29411766, 1)
+theme_override_fonts/font = ExtResource("3_ot8bd")
+theme_override_font_sizes/font_size = 22
+text = "100000000"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Line" type="Sprite2D" parent="." unique_id=1172346158]
+position = Vector2(421.90262, 74)
+scale = Vector2(0.5985714, 0.57142866)
+texture = ExtResource("1_vri85")
+region_enabled = true
+region_rect = Rect2(1690, 131, 1225, 7)
+
+[node name="Item_Name" type="Label" parent="." unique_id=1079306412]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 0
+offset_left = 70.277
+offset_top = 100.0
+offset_right = 110.277
+offset_bottom = 150.0
+theme_override_fonts/font = ExtResource("3_ot8bd")
+theme_override_font_sizes/font_size = 26
+text = "창"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="." unique_id=1336252096]
+layout_mode = 0
+offset_left = 46.277
+offset_top = 150.0
+offset_right = 831.72595
+offset_bottom = 710.682
+rotation = 0.000437795
+theme = ExtResource("4_ot8bd")
+
+[node name="MarginContainer" type="MarginContainer" parent="ScrollContainer" unique_id=1811711279]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/margin_left = 24
+theme_override_constants/margin_top = 0
+
+[node name="GridContainer" type="GridContainer" parent="ScrollContainer/MarginContainer" unique_id=1796692471]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/h_separation = 60
+theme_override_constants/v_separation = 45
+columns = 4
+
+[node name="StoreBuyApplyButton" type="TextureButton" parent="." unique_id=181639390]
+layout_mode = 0
+offset_left = 261.27756
+offset_top = 750.0
+offset_right = 381.27756
+offset_bottom = 795.0
+disabled = true
+
+[node name="StoreBuyApply_Normal" type="Sprite2D" parent="StoreBuyApplyButton" unique_id=340147663]
+position = Vector2(60, 23)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_vri85")
+region_enabled = true
+region_rect = Rect2(1841, 1482, 239, 89)
+
+[node name="StoreBuyApply_Over" type="Sprite2D" parent="StoreBuyApplyButton" unique_id=1029418837]
+visible = false
+position = Vector2(60, 23)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_vri85")
+region_enabled = true
+region_rect = Rect2(2181, 1482, 239, 89)
+
+[node name="StoreBuyApply_Text" type="Label" parent="StoreBuyApplyButton" unique_id=1225958532]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 45.0
+theme_override_fonts/font = ExtResource("3_ot8bd")
+text = "구매"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StoreBuyCancelButton" type="TextureButton" parent="." unique_id=954330273]
+layout_mode = 0
+offset_left = 461.27756
+offset_top = 750.0
+offset_right = 581.2776
+offset_bottom = 795.0
+
+[node name="StoreBuyCancel_Normal" type="Sprite2D" parent="StoreBuyCancelButton" unique_id=1845134030]
+position = Vector2(60, 23)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_vri85")
+region_enabled = true
+region_rect = Rect2(1841, 1482, 239, 89)
+
+[node name="StoreBuyCancel_Over" type="Sprite2D" parent="StoreBuyCancelButton" unique_id=1443934537]
+visible = false
+position = Vector2(60, 23)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_vri85")
+region_enabled = true
+region_rect = Rect2(2181, 1482, 239, 89)
+
+[node name="StoreBuyCancel_Text" type="Label" parent="StoreBuyCancelButton" unique_id=1849180294]
+layout_mode = 0
+offset_right = 120.0
+offset_bottom = 45.0
+theme_override_fonts/font = ExtResource("3_ot8bd")
+text = "취소"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="mouse_entered" from="StoreBuyApplyButton" to="." method="_on_store_buy_apply_button_mouse_entered"]
+[connection signal="mouse_exited" from="StoreBuyApplyButton" to="." method="_on_store_buy_apply_button_mouse_exited"]
+[connection signal="pressed" from="StoreBuyApplyButton" to="." method="_on_store_buy_apply_button_pressed"]
+[connection signal="mouse_entered" from="StoreBuyCancelButton" to="." method="_on_store_buy_cancel_button_mouse_entered"]
+[connection signal="mouse_exited" from="StoreBuyCancelButton" to="." method="_on_store_buy_cancel_button_mouse_exited"]
+[connection signal="pressed" from="StoreBuyCancelButton" to="." method="_on_store_buy_cancel_button_pressed"]
