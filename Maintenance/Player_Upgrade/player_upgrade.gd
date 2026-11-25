@@ -144,8 +144,8 @@ var start = false
 var pointed = 0
 var current_point = 0
 
-var used_coin = 0
-var need_coin = 0
+var after_coin = 1000
+var need_coin = 100
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -159,7 +159,7 @@ func _set_initial():
 	#_set_language()
 
 func _process(delta: float) -> void:
-	if used_coin < need_coin:
+	if after_coin < need_coin:
 		hp_up_button.disabled = true
 		eng_up_button.disabled = true
 		def_up_button.disabled = true
@@ -258,25 +258,25 @@ func _set_font(node: Node, font: Font):
 #포인트 세팅
 func _set_pointed(first):
 	if first:
-		up_hp = int(Game.player.stat_up["hp"])
-		up_eng = int(Game.player.stat_up["eng"])
-		up_def = int(Game.player.stat_up["def"])
-		up_sp = int(Game.player.stat_up["sp"])
-		up_wgt = int(Game.player.stat_up["wgt"])
-		up_atk = int(Game.player.stat_up["atk"])
-		up_absb = int(Game.player.stat_up["absb"])
-		up_adp = int(Game.player.stat_up["adp"])
-		up_luk = int(Game.player.stat_up["luk"])
+		up_hp = int(Game.player.stat.stat_up["hp"])
+		up_eng = int(Game.player.stat.stat_up["eng"])
+		up_def = int(Game.player.stat.stat_up["def"])
+		up_sp = int(Game.player.stat.stat_up["sp"])
+		up_wgt = int(Game.player.stat.stat_up["wgt"])
+		up_atk = int(Game.player.stat.stat_up["atk"])
+		up_absb = int(Game.player.stat.stat_up["absb"])
+		up_adp = int(Game.player.stat.stat_up["adp"])
+		up_luk = int(Game.player.stat.stat_up["luk"])
 		
-		up_hp_min = int(Game.player.stat_up["hp"])
-		up_eng_min = int(Game.player.stat_up["eng"])
-		up_def_min = int(Game.player.stat_up["def"])
-		up_sp_min = int(Game.player.stat_up["sp"])
-		up_wgt_min = int(Game.player.stat_up["wgt"])
-		up_atk_min = int(Game.player.stat_up["atk"])
-		up_absb_min = int(Game.player.stat_up["absb"])
-		up_adp_min = int(Game.player.stat_up["adp"])
-		up_luk_min = int(Game.player.stat_up["luk"])
+		up_hp_min = int(Game.player.stat.stat_up["hp"])
+		up_eng_min = int(Game.player.stat.stat_up["eng"])
+		up_def_min = int(Game.player.stat.stat_up["def"])
+		up_sp_min = int(Game.player.stat.stat_up["sp"])
+		up_wgt_min = int(Game.player.stat.stat_up["wgt"])
+		up_atk_min = int(Game.player.stat.stat_up["atk"])
+		up_absb_min = int(Game.player.stat.stat_up["absb"])
+		up_adp_min = int(Game.player.stat.stat_up["adp"])
+		up_luk_min = int(Game.player.stat.stat_up["luk"])
 		
 		pointed = up_hp + up_eng + up_def + up_sp + up_wgt + up_atk + up_absb + up_adp + up_luk
 	
@@ -313,7 +313,7 @@ func _set_pointed(first):
 	
 
 func _set_stat():
-	origin_stat = Game.player._set_final_all_stat()
+	origin_stat = Game.player.stat._set_final_all_stat()
 	hp_before.text = str(origin_stat["hp"])
 	eng_before.text = str(origin_stat["eng"])
 	def_before.text = str(origin_stat["def"])
@@ -360,17 +360,16 @@ func _set_stat():
 
 func _set_after_stat() -> void:
 	var eng_calc = 0
-	
-	hp_after.text = str(Game.player._set_final_one_stat("hp", up_hp - up_hp_min))
-	eng_after.text = str(Game.player._set_final_one_stat("eng", up_hp - up_hp_min))
-	def_after.text = str(Game.player._set_final_one_stat("def", up_hp - up_hp_min))
-	sp_after.text = str(Game.player._set_final_one_stat("sp", up_hp - up_hp_min))
-	speed_after.text = str(Game.player._set_final_one_stat("ms", up_hp - up_hp_min))
-	wgt_after.text = str(Game.player._set_final_one_stat("wgt", up_hp - up_hp_min))
-	atk_after.text = str(Game.player._set_final_one_stat("atk", up_hp - up_hp_min))
-	absb_after.text = str(Game.player._set_final_one_stat("absb", up_hp - up_hp_min))
-	adp_after.text = str(Game.player._set_final_one_stat("adp", up_hp - up_hp_min))
-	luk_after.text = str(Game.player._set_final_one_stat("luk", up_hp - up_hp_min))
+	hp_after.text = str(Game.player.stat._set_final_one_stat("hp", up_hp - up_hp_min))
+	eng_after.text = str(Game.player.stat._set_final_one_stat("eng", up_eng - up_eng_min))
+	def_after.text = str(Game.player.stat._set_final_one_stat("def", up_def - up_def_min))
+	sp_after.text = str(Game.player.stat._set_final_one_stat("sp", up_sp - up_sp_min))
+	speed_after.text = str(Game.player.stat._set_final_one_stat("ms", up_sp - up_sp_min))
+	wgt_after.text = str(Game.player.stat._set_final_one_stat("wgt", up_wgt - up_wgt_min))
+	atk_after.text = str(Game.player.stat._set_final_one_stat("atk", up_atk - up_atk_min))
+	absb_after.text = str(Game.player.stat._set_final_one_stat("absb", up_absb - up_absb_min))
+	adp_after.text = str(Game.player.stat._set_final_one_stat("adp", up_adp - up_adp_min))
+	luk_after.text = str(Game.player.stat._set_final_one_stat("luk", up_luk - up_luk_min))
 	#var weapon_resource
 	#var atk_value = float(FrontGlobal.player_stats.get(&"physical_attack", 0.0)) + ((up_atk - up_atk_min) * float(FrontGlobal.growth_stats.get(&"physical_attack", 0.0)))
 	#if FrontGlobal.equip_weapon_id[0] == null:
@@ -403,7 +402,7 @@ func _set_after_stat() -> void:
 		#weapon_resource = Api.weapon.get_weapon_resource(FrontGlobal.equip_weapon_id[4])["resource"]["attack"]
 		#wattack5_after.text = str(Api.combat.attack_formula_damage(float(atk_value), weapon_resource["weapon_attack"], weapon_resource["grade_percent"], 1.0, 0.0))
 	#var plus_reroll = int((up_luk - up_luk_min) / 5)
-	reroll_after.text = str(Game.player._set_final_one_stat("reroll", up_hp - up_hp_min))
+	reroll_after.text = str(Game.player.stat._set_final_one_stat("reroll", up_luk - up_luk_min))
 	
 	if hp_after.text != hp_before.text:
 		hp_after.add_theme_color_override("font_color", Color(0.549, 0.451, 0.294))
@@ -473,7 +472,8 @@ func _set_after_stat() -> void:
 	
 
 func _set_level():
-	level.text = str(current_point + pointed)
+	Game.player._set_level()
+	level.text = str(Game.player.level + current_point)
 	if current_point > 0:
 		level.add_theme_color_override("font_color", Color(0.549, 0.451, 0.294))
 	else:
@@ -516,40 +516,42 @@ func _on_player_reset_button_pressed() -> void:
 	_get_need_coin()
 	
 func _apply_stat():
-	var data := {}
-
-	var mapping = {
-		&"max_hp": up_hp - up_hp_min,
-		&"max_eng": up_eng - up_eng_min,
-		&"def": up_def - up_def_min,
-		&"endurance": up_sp - up_sp_min,
-		&"wgt": up_wgt - up_wgt_min,
-		&"physical_attack": up_atk - up_atk_min,
-		&"absorption": up_absb - up_absb_min,
-		&"adp": up_adp - up_adp_min,
-		&"luk": up_luk - up_luk_min
+	var data = {
+		"hp": up_hp - up_hp_min,
+		"eng": up_eng - up_eng_min,
+		"def": up_def - up_def_min,
+		"sp": up_sp - up_sp_min,
+		"wgt": up_wgt - up_wgt_min,
+		"atk": up_atk - up_atk_min,
+		"absb": up_absb - up_absb_min,
+		"adp": up_adp - up_adp_min,
+		"luk": up_luk - up_luk_min
 	}
-
-	for key in mapping:
-		var v = int(mapping[key])
-		if v != 0:
-			data[key] = v
-	#print(invest_patch_result)
+	
+	Game.player._apply_player_upgrade(data, current_point)
+	
 	current_point = 0
 	_set_pointed(true)
 	_set_stat()
 	_set_after_stat()
-	get_parent().get_parent().get_parent()._get_coin()
+	#get_parent().get_parent().get_parent()._get_coin()
 	_get_need_coin()
 
 func _get_need_coin():
+	var cost = 0
+	if current_point > 0:
+		for i in current_point:
+			cost += Game.player.currency._player_upgrade_cost(false, Game.player.level + i)
 	
-	coin_after.text = str(used_coin)
+	after_coin = Game.player.soulstone - cost
+	need_coin = Game.player.currency._player_upgrade_cost(false, Game.player.level + current_point)
+	
+	coin_after.text = str(after_coin)
 	coin_need.text = str(need_coin)
 
 
 func _on_hp_up_button_pressed() -> void:
-	if used_coin > need_coin:
+	if after_coin > need_coin:
 		up_hp += 1
 		current_point += 1
 	
@@ -557,7 +559,7 @@ func _on_hp_up_button_pressed() -> void:
 		_set_after_stat()
 		_get_need_coin()
 		
-		up_hp_text.add_theme_color_override("font_color", Color(0.549, 0.451, 0.294))
+		point_hp_text.add_theme_color_override("font_color", Color(0.549, 0.451, 0.294))
 	else:
 		pass
 
@@ -575,14 +577,14 @@ func _on_hp_down_button_pressed() -> void:
 
 
 func _on_energy_up_button_pressed() -> void:
-	if used_coin > need_coin:
+	if after_coin > need_coin:
 		up_eng += 1
 		current_point += 1
 	
 		_set_pointed(false)
 		_set_after_stat()
 		_get_need_coin()
-		up_eng_text.add_theme_color_override("font_color", Color(0.549, 0.451, 0.294))
+		point_eng_text.add_theme_color_override("font_color", Color(0.549, 0.451, 0.294))
 	else:
 		pass
 
@@ -599,14 +601,14 @@ func _on_energy_down_button_pressed() -> void:
 
 
 func _on_defense_up_button_pressed() -> void:
-	if used_coin > need_coin:
+	if after_coin > need_coin:
 		up_def += 1
 		current_point += 1
 	
 		_set_pointed(false)
 		_set_after_stat()
 		_get_need_coin()
-		up_def_text.add_theme_color_override("font_color", Color(0.549, 0.451, 0.294))
+		point_def_text.add_theme_color_override("font_color", Color(0.549, 0.451, 0.294))
 	else:
 		pass
 
@@ -624,14 +626,14 @@ func _on_defense_down_button_pressed() -> void:
 
 
 func _on_stamina_up_button_pressed() -> void:
-	if used_coin > need_coin:
+	if after_coin > need_coin:
 		up_sp += 1
 		current_point += 1
 	
 		_set_pointed(false)
 		_set_after_stat()
 		_get_need_coin()
-		up_sp_text.add_theme_color_override("font_color", Color(0.549, 0.451, 0.294))
+		point_sp_text.add_theme_color_override("font_color", Color(0.549, 0.451, 0.294))
 	else:
 		pass
 
@@ -649,14 +651,14 @@ func _on_stamina_down_button_pressed() -> void:
 
 
 func _on_weight_up_button_pressed() -> void:
-	if used_coin > need_coin:
+	if after_coin > need_coin:
 		up_wgt += 1
 		current_point += 1
 	
 		_set_pointed(false)
 		_set_after_stat()
 		_get_need_coin()
-		up_wgt_text.add_theme_color_override("font_color", Color(0.549, 0.451, 0.294))
+		point_wgt_text.add_theme_color_override("font_color", Color(0.549, 0.451, 0.294))
 	else:
 		pass
 
@@ -674,14 +676,14 @@ func _on_weight_down_button_pressed() -> void:
 
 
 func _on_attack_up_button_pressed() -> void:
-	if used_coin > need_coin:
+	if after_coin > need_coin:
 		up_atk += 1
 		current_point += 1
 	
 		_set_pointed(false)
 		_set_after_stat()
 		_get_need_coin()
-		up_atk_text.add_theme_color_override("font_color", Color(0.549, 0.451, 0.294))
+		point_atk_text.add_theme_color_override("font_color", Color(0.549, 0.451, 0.294))
 	else:
 		pass
 
@@ -699,14 +701,14 @@ func _on_attack_down_button_pressed() -> void:
 
 
 func _on_absorb_up_button_pressed() -> void:
-	if used_coin > need_coin:
+	if after_coin > need_coin:
 		up_absb += 1
 		current_point += 1
 	
 		_set_pointed(false)
 		_set_after_stat()
 		_get_need_coin()
-		up_absb_text.add_theme_color_override("font_color", Color(0.549, 0.451, 0.294))
+		point_absb_text.add_theme_color_override("font_color", Color(0.549, 0.451, 0.294))
 	else:
 		pass
 
@@ -724,14 +726,14 @@ func _on_absorb_down_button_pressed() -> void:
 
 
 func _on_adapt_up_button_pressed() -> void:
-	if used_coin > need_coin:
+	if after_coin > need_coin:
 		up_adp += 1
 		current_point += 1
 	
 		_set_pointed(false)
 		_set_after_stat()
 		_get_need_coin()
-		up_adp_text.add_theme_color_override("font_color", Color(0.549, 0.451, 0.294))
+		point_adp_text.add_theme_color_override("font_color", Color(0.549, 0.451, 0.294))
 	else:
 		pass
 
@@ -749,14 +751,14 @@ func _on_adapt_down_button_pressed() -> void:
 
 
 func _on_luck_up_button_pressed() -> void:
-	if used_coin > need_coin:
+	if after_coin > need_coin:
 		up_luk += 1
 		current_point += 1
 	
 		_set_pointed(false)
 		_set_after_stat()
 		_get_need_coin()
-		up_luk_text.add_theme_color_override("font_color", Color(0.549, 0.451, 0.294))
+		point_luk_text.add_theme_color_override("font_color", Color(0.549, 0.451, 0.294))
 	else:
 		pass
 
@@ -777,15 +779,12 @@ func _on_button_pressed() -> void:
 
 
 func _on_reset_yes_pressed() -> void:
-	#var reset = Api.stat.reset_growth_progress(player_id)
-	#var player_resource: Dictionary = reset.get("resource", {}) if reset.get("resource", {}) is Dictionary else {}
-	#var save_result: Dictionary = Api.data.save_player(player_resource)
-	#current_point = 0
-	#FrontGlobal._get_player_snapshot()
+	Game.player._reset_player_upgrade()
+	current_point = 0
 	_set_pointed(true)
 	_set_stat()
 	_set_after_stat()
-	get_parent().get_parent().get_parent()._get_coin()
+	#get_parent().get_parent().get_parent()._get_coin()
 	_get_need_coin()
 	reset_text.visible = false
 
