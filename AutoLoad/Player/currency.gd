@@ -17,3 +17,20 @@ func _reset_player_upgrade_cost():
 		print(cost)
 	
 	Game.player.soulstone += cost
+
+#포션 업글 재화
+func _potion_upgrade_cost(use):
+	var cost = 5000
+	
+	if use:
+		Game.player.soulstone -= cost
+	else:
+		return cost
+
+#포션 업글 리셋(테스트용)
+func _reset_potion_upgrade_cost():
+	var cost = 0
+	for i in Game.player.potion.potion_stat["lv"]:
+		cost += 5000
+	
+	Game.player.soulstone += cost

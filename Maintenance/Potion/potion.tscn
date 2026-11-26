@@ -15,12 +15,16 @@ region_rect = Rect2(1692, 316, 263, 263)
 atlas = ExtResource("7_5nof0")
 region = Rect2(0, 0, 500, 500)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_mp4t4"]
-atlas = ExtResource("7_5nof0")
+[sub_resource type="AtlasTexture" id="AtlasTexture_ev687"]
+atlas = ExtResource("6_vijx5")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_riafc"]
+atlas = ExtResource("6_vijx5")
 region = Rect2(500, 0, 500, 500)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_c6yqv"]
-atlas = ExtResource("7_5nof0")
+[sub_resource type="AtlasTexture" id="AtlasTexture_sblrb"]
+atlas = ExtResource("6_vijx5")
 region = Rect2(1000, 0, 500, 500)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vijx5"]
@@ -35,32 +39,28 @@ region = Rect2(500, 0, 500, 500)
 atlas = ExtResource("5_pje3p")
 region = Rect2(1000, 0, 500, 500)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ev687"]
-atlas = ExtResource("6_vijx5")
-region = Rect2(0, 0, 500, 500)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_riafc"]
-atlas = ExtResource("6_vijx5")
-region = Rect2(500, 0, 500, 500)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sblrb"]
-atlas = ExtResource("6_vijx5")
-region = Rect2(1000, 0, 500, 500)
-
 [sub_resource type="SpriteFrames" id="SpriteFrames_2dd1r"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j838d")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mp4t4")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_c6yqv")
 }],
 "loop": 1,
 "name": &"Empty",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ev687")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_riafc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sblrb")
+}],
+"loop": 1,
+"name": &"Energy",
 "speed": 5.0
 }, {
 "frames": [{
@@ -75,20 +75,6 @@ animations = [{
 }],
 "loop": 1,
 "name": &"HP",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_ev687")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_riafc")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sblrb")
-}],
-"loop": 1,
-"name": &"MP",
 "speed": 5.0
 }]
 
@@ -165,25 +151,25 @@ offset_bottom = 267.0
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=1908973973]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=75468304]
+[node name="Before_Upgrade_Text" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=75468304]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_aak2p")
 theme_override_font_sizes/font_size = 22
 text = "현재 강화 :"
 
-[node name="Label2" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1951702680]
+[node name="Before_Amount_Text" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1951702680]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_aak2p")
 theme_override_font_sizes/font_size = 22
 text = "총 개수 :"
 
-[node name="Label3" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=892060557]
+[node name="Before_HP_Text" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=892060557]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_aak2p")
 theme_override_font_sizes/font_size = 22
 text = "hp 회복량 :"
 
-[node name="Label4" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1999450484]
+[node name="Before_Energy_Text" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1999450484]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_aak2p")
 theme_override_font_sizes/font_size = 22
@@ -213,7 +199,7 @@ theme_override_font_sizes/font_size = 22
 text = "500"
 horizontal_alignment = 1
 
-[node name="Before_MP" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=1368047934]
+[node name="Before_Energy" type="Label" parent="HBoxContainer/VBoxContainer2" unique_id=1368047934]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("2_aak2p")
 theme_override_font_sizes/font_size = 22
@@ -230,28 +216,28 @@ offset_bottom = 417.0
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer2" unique_id=374606968]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="HBoxContainer2/VBoxContainer" unique_id=2088316654]
+[node name="After_Upgrade_Text" type="Label" parent="HBoxContainer2/VBoxContainer" unique_id=2088316654]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.54901963, 0.4509804, 0.29411766, 1)
 theme_override_fonts/font = ExtResource("2_aak2p")
 theme_override_font_sizes/font_size = 22
 text = "다음 강화 :"
 
-[node name="Label2" type="Label" parent="HBoxContainer2/VBoxContainer" unique_id=573118637]
+[node name="After_Amount_Text" type="Label" parent="HBoxContainer2/VBoxContainer" unique_id=573118637]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.54901963, 0.4509804, 0.29411766, 1)
 theme_override_fonts/font = ExtResource("2_aak2p")
 theme_override_font_sizes/font_size = 22
 text = "총 개수 :"
 
-[node name="Label3" type="Label" parent="HBoxContainer2/VBoxContainer" unique_id=68626160]
+[node name="After_HP_Text" type="Label" parent="HBoxContainer2/VBoxContainer" unique_id=68626160]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.54901963, 0.4509804, 0.29411766, 1)
 theme_override_fonts/font = ExtResource("2_aak2p")
 theme_override_font_sizes/font_size = 22
 text = "hp 회복량 :"
 
-[node name="Label4" type="Label" parent="HBoxContainer2/VBoxContainer" unique_id=1278386368]
+[node name="After_Energy_Text" type="Label" parent="HBoxContainer2/VBoxContainer" unique_id=1278386368]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.54901963, 0.4509804, 0.29411766, 1)
 theme_override_fonts/font = ExtResource("2_aak2p")
@@ -285,7 +271,7 @@ theme_override_font_sizes/font_size = 22
 text = "1000"
 horizontal_alignment = 1
 
-[node name="After_MP" type="Label" parent="HBoxContainer2/VBoxContainer2" unique_id=872949797]
+[node name="After_Energy" type="Label" parent="HBoxContainer2/VBoxContainer2" unique_id=872949797]
 layout_mode = 2
 theme_override_colors/font_color = Color(0.54901963, 0.4509804, 0.29411766, 1)
 theme_override_fonts/font = ExtResource("2_aak2p")
@@ -345,7 +331,7 @@ offset_right = 643.99994
 offset_bottom = 667.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_kuy1h")
 
-[node name="PotionMPNum" type="Label" parent="Panel3" unique_id=1777634997]
+[node name="PotionEnergyNum" type="Label" parent="Panel3" unique_id=1777634997]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -364,8 +350,8 @@ horizontal_alignment = 2
 position = Vector2(65.5, 85.5)
 scale = Vector2(0.35, 0.35)
 sprite_frames = SubResource("SpriteFrames_2dd1r")
-animation = &"MP"
-autoplay = "MP"
+animation = &"Energy"
+autoplay = "Energy"
 
 [node name="HPUpButton" type="TextureButton" parent="." unique_id=1449038272]
 layout_mode = 0
@@ -411,21 +397,21 @@ texture = ExtResource("1_nmvnp")
 region_enabled = true
 region_rect = Rect2(2901, 1488, 73, 73)
 
-[node name="MPUpButton" type="TextureButton" parent="." unique_id=1615351871]
+[node name="EnergyUpButton" type="TextureButton" parent="." unique_id=1615351871]
 layout_mode = 0
 offset_left = 529.99994
 offset_top = 709.0
 offset_right = 566.99994
 offset_bottom = 746.0
 
-[node name="MPUp_Normal" type="Sprite2D" parent="MPUpButton" unique_id=496593034]
+[node name="EnergyUp_Normal" type="Sprite2D" parent="EnergyUpButton" unique_id=496593034]
 position = Vector2(18.5, 18.5)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_nmvnp")
 region_enabled = true
 region_rect = Rect2(2531, 1488, 73, 73)
 
-[node name="MPUp_Over" type="Sprite2D" parent="MPUpButton" unique_id=2052772517]
+[node name="EnergyUp_Over" type="Sprite2D" parent="EnergyUpButton" unique_id=2052772517]
 visible = false
 position = Vector2(18.5, 18.5)
 scale = Vector2(0.5, 0.5)
@@ -433,21 +419,21 @@ texture = ExtResource("1_nmvnp")
 region_enabled = true
 region_rect = Rect2(2779, 1488, 73, 73)
 
-[node name="MPDownButton" type="TextureButton" parent="." unique_id=180288596]
+[node name="EnergyDownButton" type="TextureButton" parent="." unique_id=180288596]
 layout_mode = 0
 offset_left = 590.99994
 offset_top = 709.0
 offset_right = 627.99994
 offset_bottom = 746.0
 
-[node name="MPDown_Normal" type="Sprite2D" parent="MPDownButton" unique_id=488291810]
+[node name="EnergyDown_Normal" type="Sprite2D" parent="EnergyDownButton" unique_id=488291810]
 position = Vector2(18.5, 18.5)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("1_nmvnp")
 region_enabled = true
 region_rect = Rect2(2653, 1488, 73, 73)
 
-[node name="MPDown_Over" type="Sprite2D" parent="MPDownButton" unique_id=149628121]
+[node name="EnergyDown_Over" type="Sprite2D" parent="EnergyDownButton" unique_id=149628121]
 visible = false
 position = Vector2(18.5, 18.5)
 scale = Vector2(0.5, 0.5)
@@ -472,10 +458,10 @@ text = "초기화(임시)"
 [connection signal="mouse_entered" from="HPDownButton" to="." method="_on_hp_down_button_mouse_entered"]
 [connection signal="mouse_exited" from="HPDownButton" to="." method="_on_hp_down_button_mouse_exited"]
 [connection signal="pressed" from="HPDownButton" to="." method="_on_hp_down_button_pressed"]
-[connection signal="mouse_entered" from="MPUpButton" to="." method="_on_mp_up_button_mouse_entered"]
-[connection signal="mouse_exited" from="MPUpButton" to="." method="_on_mp_up_button_mouse_exited"]
-[connection signal="pressed" from="MPUpButton" to="." method="_on_mp_up_button_pressed"]
-[connection signal="mouse_entered" from="MPDownButton" to="." method="_on_mp_down_button_mouse_entered"]
-[connection signal="mouse_exited" from="MPDownButton" to="." method="_on_mp_down_button_mouse_exited"]
-[connection signal="pressed" from="MPDownButton" to="." method="_on_mp_down_button_pressed"]
+[connection signal="mouse_entered" from="EnergyUpButton" to="." method="_on_energy_up_button_mouse_entered"]
+[connection signal="mouse_exited" from="EnergyUpButton" to="." method="_on_energy_up_button_mouse_exited"]
+[connection signal="pressed" from="EnergyUpButton" to="." method="_on_energy_up_button_pressed"]
+[connection signal="mouse_entered" from="EnergyDownButton" to="." method="_on_energy_down_button_mouse_entered"]
+[connection signal="mouse_exited" from="EnergyDownButton" to="." method="_on_energy_down_button_mouse_exited"]
+[connection signal="pressed" from="EnergyDownButton" to="." method="_on_energy_down_button_pressed"]
 [connection signal="pressed" from="Button" to="." method="_reset_potion_up"]

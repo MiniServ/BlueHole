@@ -10,7 +10,7 @@ static var stat = {
 	0: {
 		"data": "캐릭터 데이터",
 		"hp": "최대체력",
-		"mp": "최대마력",
+		"eng": "최대마력",
 		"def": "방어력",
 		"stamina": "지구력",
 		"speed": "이동속도",
@@ -38,7 +38,7 @@ static var stat = {
 	1: {
 		"data": "Character Data",
 		"hp": "Max HP",
-		"mp": "Max MP",
+		"eng": "Max MP",
 		"def": "Defense",
 		"stamina": "Stamina",
 		"speed": "Move SPD",
@@ -66,7 +66,7 @@ static var stat = {
 	2: {
 		"data": "角色数据",
 		"hp": "最大生命值",
-		"mp": "最大魔力",
+		"eng": "最大魔力",
 		"def": "防御力",
 		"stamina": "耐力",
 		"speed": "移动速度",
@@ -94,7 +94,7 @@ static var stat = {
 	3: {
 		"data": "角色資料",
 		"hp": "最大生命值",
-		"mp": "最大魔力",
+		"eng": "最大魔力",
 		"def": "防禦力",
 		"stamina": "耐力",
 		"speed": "移動速度",
@@ -122,7 +122,7 @@ static var stat = {
 	4: {
 		"data": "キャラクターデータ",
 		"hp": "最大HP",
-		"mp": "最大MP",
+		"eng": "最大MP",
 		"def": "防御力",
 		"stamina": "スタミナ",
 		"speed": "移動速度",
@@ -169,7 +169,7 @@ static var potion_up = {
 		"after_up": "다음 강화",
 		"amount": "총 개수",
 		"hp": "HP 회복량",
-		"mp": "MP 회복량",
+		"eng": "MP 회복량",
 	},
 	1: {
 		"coin_need": "Cost",
@@ -177,7 +177,7 @@ static var potion_up = {
 		"after_up": "Next Lv",
 		"amount": "Amount",
 		"hp": "HP Heal",
-		"mp": "MP Heal",
+		"eng": "MP Heal",
 	},
 	2: {
 		"coin_need": "所需金币",
@@ -185,7 +185,7 @@ static var potion_up = {
 		"after_up": "下一级",
 		"amount": "总数量",
 		"hp": "HP恢复量",
-		"mp": "MP恢复量",
+		"eng": "MP恢复量",
 	},
 	3: {
 		"coin_need": "所需金幣",
@@ -193,7 +193,7 @@ static var potion_up = {
 		"after_up": "下一級",
 		"amount": "總數量",
 		"hp": "HP恢復量",
-		"mp": "MP恢復量",
+		"eng": "MP恢復量",
 	},
 	4: {
 		"coin_need": "必要コイン",
@@ -201,7 +201,7 @@ static var potion_up = {
 		"after_up": "次の強化",
 		"amount": "所持数",
 		"hp": "HP回復量",
-		"mp": "MP回復量",
+		"eng": "MP回復量",
 	}
 }
 
@@ -403,7 +403,7 @@ static var weapon_skill = {
 #무기 상세
 static var weapon_detail = {
 	0: {
-		"mp cost": "소비MP",
+		"eng cost": "소비MP",
 		"weight": "중량",
 		"atk": "공격력",
 		"physical": "물리",
@@ -414,7 +414,7 @@ static var weapon_detail = {
 		"special": "특수",
 	},
 	1: {
-		"mp cost": "MP Cost",
+		"eng cost": "MP Cost",
 		"weight": "Weight",
 		"atk": "ATK",
 		"physical": "Physical",
@@ -425,7 +425,7 @@ static var weapon_detail = {
 		"special": "Special",
 	},
 	2: {
-		"mp cost": "MP消耗",
+		"eng cost": "MP消耗",
 		"weight": "负重",
 		"atk": "攻击力",
 		"physical": "物理",
@@ -436,7 +436,7 @@ static var weapon_detail = {
 		"special": "特殊",
 	},
 	3: {
-		"mp cost": "MP消耗",
+		"eng cost": "MP消耗",
 		"weight": "負重",
 		"atk": "攻擊力",
 		"physical": "物理",
@@ -447,7 +447,7 @@ static var weapon_detail = {
 		"special": "特殊",
 	},
 	4: {
-		"mp cost": "消費MP",
+		"eng cost": "消費MP",
 		"weight": "重量",
 		"atk": "攻撃力",
 		"physical": "物理",

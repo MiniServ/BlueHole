@@ -135,10 +135,12 @@ func _set_final_one_stat(stat_name, point):
 	
 	return final_stat
 
+#스탯 업그레이드 확정
 func _apply_player_upgrade_stat(data):
 	for i in stat_up:
 		stat_up[i] = data[i]
 
+#스탯 업그레이드 초기화
 func _reset_player_upgrade_stat():
 	for i in stat_up:
 		stat_up[i] = 0

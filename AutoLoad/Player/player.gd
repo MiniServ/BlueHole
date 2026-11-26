@@ -1,7 +1,8 @@
 extends RefCounted
 
-var currency = preload("res://AutoLoad/Player/currency.gd").new()
 var stat = preload("res://AutoLoad/Player/stat.gd").new()
+var currency = preload("res://AutoLoad/Player/currency.gd").new()
+var potion = preload("res://AutoLoad/Player/potion.gd").new()
 
 var level = 0
 var soulstone = 10000000
@@ -30,3 +31,8 @@ func _reset_player_upgrade():
 	_set_level()
 	Game.save._save_player()
 	Game.save._save_stat()
+
+func _potion_upgrade():
+	potion._potion_upgrade(true)
+	currency._potion_upgrade_cost(true)
+	
