@@ -1,12 +1,12 @@
 extends RefCounted
 
 var potion_stat: Dictionary =  {
-	"lv": 0,
-	"qty": 3,
-	"hp": 3,
-	"hp_heal": 100,
-	"eng": 0,
-	"eng_heal": 50,
+	"lv": 0, #강화
+	"qty": 3, #전체수량
+	"hp": 3, #체력 수량
+	"hp_heal": 100, #체력 회복량
+	"eng": 0, #E에너지 수량
+	"eng_heal": 50, #에너지 회복량
 }
 
 #HP +1, eng -1
@@ -16,6 +16,8 @@ func _up_hp_potion():
 	
 	potion_stat["hp"] += 1
 	potion_stat["eng"] -= 1
+	
+	Game.save._save_potion()
 
 #HP -1, eng +1
 func _down_hp_potion():
@@ -24,7 +26,10 @@ func _down_hp_potion():
 	
 	potion_stat["hp"] -= 1
 	potion_stat["eng"] += 1
+	
+	Game.save._save_potion()
 
+#포션 강화
 func _potion_upgrade(use):
 	if use:
 		potion_stat["lv"] += 1
@@ -48,4 +53,13 @@ func _potion_upgrade(use):
 		preview["eng_heal"] += 5
 		
 		return preview
+
+#포션 초기화(테스트용)
+func _potion_reset():
+	potion_stat["lv"] = 0
+	potion_stat["qty"] = 3
+	potion_stat["hp"] = 3
+	potion_stat["hp_heal"] = 100
+	potion_stat["eng"] = 0
+	potion_stat["eng_heal"] = 50
 	

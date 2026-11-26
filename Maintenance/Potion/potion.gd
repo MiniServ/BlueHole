@@ -13,16 +13,12 @@ extends Control
 @onready var after_hp_text = $HBoxContainer2/VBoxContainer/After_HP_Text
 @onready var after_eng_text = $HBoxContainer2/VBoxContainer/After_Energy_Text
 
-@onready var potionup_normal = $PotionUpButton/PotionUp_Normal
-@onready var potionup_over = $PotionUpButton/PotionUp_Over
-@onready var hpup_normal = $HPUpButton/HPUp_Normal
-@onready var hpup_over = $HPUpButton/HPUp_Over
-@onready var hpdown_normal = $HPDownButton/HPDown_Normal
-@onready var hpdown_over = $HPDownButton/HPDown_Over
-@onready var engup_normal = $EnergyUpButton/EnergyUp_Normal
-@onready var engup_over = $EnergyUpButton/EnergyUp_Over
-@onready var engdown_normal = $EnergyDownButton/EnergyDown_Normal
-@onready var engdown_over = $EnergyDownButton/EnergyDown_Over
+@onready var hp_up_button = $HPUpButton
+@onready var hp_down_button = $HPDownButton
+@onready var eng_up_button = $EnergyUpButton
+@onready var eng_down_button = $EnergyDownButton
+
+@onready var potion_up_btn = $PotionUpButton
 
 @onready var coin_need = $Coin_Need
 
@@ -46,7 +42,31 @@ func _ready() -> void:
 	_set_potion()
 	_upgrade_preview()
 	_set_language()
+
+func _process(delta: float) -> void:
+	if Game.player.potion.potion_stat["lv"] == 15:
+		potion_up_btn.disabled = true
 	
+	if Game.player.potion.potion_stat["hp"] == Game.player.potion.potion_stat["qty"]:
+		hp_up_button.disabled = true
+	else:
+		hp_up_button.disabled = false
+
+	if Game.player.potion.potion_stat["hp"] == 0:
+		hp_down_button.disabled = true
+	else:
+		hp_down_button.disabled = false
+
+	if Game.player.potion.potion_stat["eng"] == Game.player.potion.potion_stat["qty"]:
+		eng_up_button.disabled = true
+	else:
+		eng_up_button.disabled = false
+
+	if Game.player.potion.potion_stat["eng"] == 0:
+		eng_down_button.disabled = true
+	else:
+		eng_down_button.disabled = false
+
 func _set_potion():
 	hp_num.text = str(Game.player.potion.potion_stat["hp"])
 	eng_num.text = str(Game.player.potion.potion_stat["eng"])
@@ -91,22 +111,18 @@ func _before_upgrade_text():
 	
 #강화 후
 func _after_upgrade_text():
-	after_up.text = str(up_preview["lv"])
-	after_amount.text = str(up_preview["qty"])
-	after_hp.text = str(up_preview["hp_heal"])
-	after_eng.text = str(up_preview["eng_heal"])
+	if Game.player.potion.potion_stat["lv"] == 15:
+		after_up.text = str(Game.player.potion.potion_stat["lv"])
+		after_amount.text = str(Game.player.potion.potion_stat["qty"])
+		after_hp.text = str(Game.player.potion.potion_stat["hp_heal"])
+		after_eng.text = str(Game.player.potion.potion_stat["eng_heal"])
+	else:
+		after_up.text = str(up_preview["lv"])
+		after_amount.text = str(up_preview["qty"])
+		after_hp.text = str(up_preview["hp_heal"])
+		after_eng.text = str(up_preview["eng_heal"])
 
 #포션 강화
-func _on_potion_up_button_mouse_entered() -> void:
-	potionup_normal.visible = false
-	potionup_over.visible = true
-
-
-func _on_potion_up_button_mouse_exited() -> void:
-	potionup_normal.visible = true
-	potionup_over.visible = false
-
-
 func _on_potion_up_button_pressed() -> void:
 	Game.player._potion_upgrade()
 	_upgrade_preview()
@@ -114,29 +130,9 @@ func _on_potion_up_button_pressed() -> void:
 	_set_potion()
 
 
-func _on_hp_up_button_mouse_entered() -> void:
-	hpup_normal.visible = false
-	hpup_over.visible = true
-
-
-func _on_hp_up_button_mouse_exited() -> void:
-	hpup_normal.visible = true
-	hpup_over.visible = false
-
-
 func _on_hp_up_button_pressed() -> void:
 	Game.player.potion._up_hp_potion()
 	_set_potion()
-
-
-func _on_hp_down_button_mouse_entered() -> void:
-	hpdown_normal.visible = false
-	hpdown_over.visible = true
-
-
-func _on_hp_down_button_mouse_exited() -> void:
-	hpdown_normal.visible = true
-	hpdown_over.visible = false
 
 
 func _on_hp_down_button_pressed() -> void:
@@ -144,29 +140,11 @@ func _on_hp_down_button_pressed() -> void:
 	_set_potion()
 
 
-func _on_energy_up_button_mouse_entered() -> void:
-	engup_normal.visible = false
-	engup_over.visible = true
-
-
-func _on_energy_up_button_mouse_exited() -> void:
-	engup_normal.visible = true
-	engup_over.visible = false
-
 
 func _on_energy_up_button_pressed() -> void:
 	Game.player.potion._down_hp_potion()
 	_set_potion()
 
-
-func _on_energy_down_button_mouse_entered() -> void:
-	engdown_normal.visible = false
-	engdown_over.visible = true
-
-
-func _on_energy_down_button_mouse_exited() -> void:
-	engdown_normal.visible = true
-	engdown_over.visible = false
 
 
 func _on_energy_down_button_pressed() -> void:
@@ -174,35 +152,7 @@ func _on_energy_down_button_pressed() -> void:
 	_set_potion()
 
 func _reset_potion_up():
-	var path := "user://test_data/players/simul_player_test01.json"
-
-	# JSON 읽기
-	var file := FileAccess.open(path, FileAccess.READ)
-	if file == null:
-		print("파일을 열 수 없음")
-		return
-
-	var json_text := file.get_as_text()
-	file.close()
-
-	var data = JSON.parse_string(json_text)
-
-	if data == null:
-		print("JSON 파싱 실패")
-		return
-
-	# 원하는 값만 변경
-	data["potions"]["potion_upgrade_level"] = 0
-
-	# 다시 저장
-	file = FileAccess.open(path, FileAccess.WRITE)
-	if file == null:
-		print("파일을 저장할 수 없음")
-		return
-
-	file.store_string(JSON.stringify(data, "\t"))
-	file.close()
-	
+	Game.player._reset_potion_upgrade()
 	_upgrade_preview()
-	get_parent().get_parent().get_parent()._get_coin()
+	#get_parent().get_parent().get_parent()._get_coin()
 	_set_potion()

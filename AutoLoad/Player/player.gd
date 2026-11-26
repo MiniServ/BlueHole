@@ -15,6 +15,7 @@ func _set_level():
 	
 	level = a
 
+#플레이어 강화
 func _apply_player_upgrade(data, point):
 	stat._apply_player_upgrade_stat(data)
 	for i in point:
@@ -25,6 +26,7 @@ func _apply_player_upgrade(data, point):
 	Game.save._save_player()
 	Game.save._save_stat()
 
+#플레이어 강화 초기화
 func _reset_player_upgrade():
 	stat._reset_player_upgrade_stat()
 	currency._reset_player_upgrade_cost()
@@ -32,7 +34,16 @@ func _reset_player_upgrade():
 	Game.save._save_player()
 	Game.save._save_stat()
 
+#포션 강화
 func _potion_upgrade():
 	potion._potion_upgrade(true)
 	currency._potion_upgrade_cost(true)
 	
+	Game.save._save_potion()
+
+#포션 강화 초기화(테스트용)
+func _reset_potion_upgrade():
+	potion._potion_reset()
+	currency._reset_potion_upgrade_cost()
+	
+	Game.save._save_potion()

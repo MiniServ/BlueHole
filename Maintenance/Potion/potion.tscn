@@ -6,6 +6,10 @@
 [ext_resource type="Texture2D" uid="uid://dwhx7rguq483n" path="res://Art/item/potion_hp.png" id="5_pje3p"]
 [ext_resource type="Texture2D" uid="uid://cl4xq53o07wrf" path="res://Art/item/potion_mp.png" id="6_vijx5"]
 [ext_resource type="Texture2D" uid="uid://c5s55mmxjiqgm" path="res://Art/item/potion_empty.png" id="7_5nof0"]
+[ext_resource type="Texture2D" uid="uid://djkrgp2sea7pr" path="res://Art/ui/normal_+.png" id="7_ebdyl"]
+[ext_resource type="Texture2D" uid="uid://c4eiiyc6ijauc" path="res://Art/ui/over_+.png" id="8_jqds3"]
+[ext_resource type="Texture2D" uid="uid://c204muqf1y8b8" path="res://Art/ui/normal_-.png" id="9_brrlc"]
+[ext_resource type="Texture2D" uid="uid://bpcwwfmtl4xcp" path="res://Art/ui/over_-.png" id="10_cngro"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kuy1h"]
 texture = ExtResource("1_nmvnp")
@@ -78,6 +82,18 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2dd1r"]
+texture = ExtResource("1_nmvnp")
+region_rect = Rect2(1841, 1353, 239, 89)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8aw1e"]
+texture = ExtResource("1_nmvnp")
+region_rect = Rect2(2181, 1353, 239, 89)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_olryk"]
+texture = ExtResource("1_nmvnp")
+region_rect = Rect2(1841, 1353, 239, 89)
+
 [node name="Potion" type="Control" unique_id=1571999250]
 layout_mode = 3
 anchors_preset = 0
@@ -119,27 +135,15 @@ sprite_frames = SubResource("SpriteFrames_2dd1r")
 animation = &"HP"
 autoplay = "HP"
 
-[node name="PotionUpButton" type="TextureButton" parent="." unique_id=698372493]
+[node name="PotionUpButton" type="Button" parent="." unique_id=875542776]
 layout_mode = 0
-offset_left = 230.99994
+offset_left = 231.0
 offset_top = 344.0
-offset_right = 350.99994
+offset_right = 351.0
 offset_bottom = 389.0
-
-[node name="PotionUp_Normal" type="Sprite2D" parent="PotionUpButton" unique_id=973407334]
-position = Vector2(60, 23)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_nmvnp")
-region_enabled = true
-region_rect = Rect2(1841, 1353, 239, 89)
-
-[node name="PotionUp_Over" type="Sprite2D" parent="PotionUpButton" unique_id=190610922]
-visible = false
-position = Vector2(60, 23)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_nmvnp")
-region_enabled = true
-region_rect = Rect2(2181, 1353, 239, 89)
+theme_override_styles/normal = SubResource("StyleBoxTexture_2dd1r")
+theme_override_styles/hover = SubResource("StyleBoxTexture_8aw1e")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_olryk")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=1940301156]
 layout_mode = 0
@@ -359,21 +363,11 @@ offset_left = 237.99994
 offset_top = 709.0
 offset_right = 274.99994
 offset_bottom = 746.0
-
-[node name="HPUp_Normal" type="Sprite2D" parent="HPUpButton" unique_id=1575581401]
-position = Vector2(18.5, 18.5)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_nmvnp")
-region_enabled = true
-region_rect = Rect2(2531, 1488, 73, 73)
-
-[node name="HPUp_Over" type="Sprite2D" parent="HPUpButton" unique_id=2012118107]
-visible = false
-position = Vector2(18.5, 18.5)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_nmvnp")
-region_enabled = true
-region_rect = Rect2(2779, 1488, 73, 73)
+texture_normal = ExtResource("7_ebdyl")
+texture_hover = ExtResource("8_jqds3")
+texture_disabled = ExtResource("7_ebdyl")
+ignore_texture_size = true
+stretch_mode = 4
 
 [node name="HPDownButton" type="TextureButton" parent="." unique_id=1452124561]
 layout_mode = 0
@@ -381,21 +375,11 @@ offset_left = 298.99994
 offset_top = 709.0
 offset_right = 335.99994
 offset_bottom = 746.0
-
-[node name="HPDown_Normal" type="Sprite2D" parent="HPDownButton" unique_id=1033101719]
-position = Vector2(18.5, 18.5)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_nmvnp")
-region_enabled = true
-region_rect = Rect2(2653, 1488, 73, 73)
-
-[node name="HPDown_Over" type="Sprite2D" parent="HPDownButton" unique_id=372215116]
-visible = false
-position = Vector2(18.5, 18.5)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_nmvnp")
-region_enabled = true
-region_rect = Rect2(2901, 1488, 73, 73)
+texture_normal = ExtResource("9_brrlc")
+texture_hover = ExtResource("10_cngro")
+texture_disabled = ExtResource("9_brrlc")
+ignore_texture_size = true
+stretch_mode = 4
 
 [node name="EnergyUpButton" type="TextureButton" parent="." unique_id=1615351871]
 layout_mode = 0
@@ -403,21 +387,11 @@ offset_left = 529.99994
 offset_top = 709.0
 offset_right = 566.99994
 offset_bottom = 746.0
-
-[node name="EnergyUp_Normal" type="Sprite2D" parent="EnergyUpButton" unique_id=496593034]
-position = Vector2(18.5, 18.5)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_nmvnp")
-region_enabled = true
-region_rect = Rect2(2531, 1488, 73, 73)
-
-[node name="EnergyUp_Over" type="Sprite2D" parent="EnergyUpButton" unique_id=2052772517]
-visible = false
-position = Vector2(18.5, 18.5)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_nmvnp")
-region_enabled = true
-region_rect = Rect2(2779, 1488, 73, 73)
+texture_normal = ExtResource("7_ebdyl")
+texture_hover = ExtResource("8_jqds3")
+texture_disabled = ExtResource("7_ebdyl")
+ignore_texture_size = true
+stretch_mode = 4
 
 [node name="EnergyDownButton" type="TextureButton" parent="." unique_id=180288596]
 layout_mode = 0
@@ -425,21 +399,11 @@ offset_left = 590.99994
 offset_top = 709.0
 offset_right = 627.99994
 offset_bottom = 746.0
-
-[node name="EnergyDown_Normal" type="Sprite2D" parent="EnergyDownButton" unique_id=488291810]
-position = Vector2(18.5, 18.5)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_nmvnp")
-region_enabled = true
-region_rect = Rect2(2653, 1488, 73, 73)
-
-[node name="EnergyDown_Over" type="Sprite2D" parent="EnergyDownButton" unique_id=149628121]
-visible = false
-position = Vector2(18.5, 18.5)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("1_nmvnp")
-region_enabled = true
-region_rect = Rect2(2901, 1488, 73, 73)
+texture_normal = ExtResource("9_brrlc")
+texture_hover = ExtResource("10_cngro")
+texture_disabled = ExtResource("9_brrlc")
+ignore_texture_size = true
+stretch_mode = 4
 
 [node name="Button" type="Button" parent="." unique_id=2023925438]
 layout_mode = 0
@@ -449,19 +413,9 @@ offset_right = 745.0
 offset_bottom = 118.0
 text = "초기화(임시)"
 
-[connection signal="mouse_entered" from="PotionUpButton" to="." method="_on_potion_up_button_mouse_entered"]
-[connection signal="mouse_exited" from="PotionUpButton" to="." method="_on_potion_up_button_mouse_exited"]
 [connection signal="pressed" from="PotionUpButton" to="." method="_on_potion_up_button_pressed"]
-[connection signal="mouse_entered" from="HPUpButton" to="." method="_on_hp_up_button_mouse_entered"]
-[connection signal="mouse_exited" from="HPUpButton" to="." method="_on_hp_up_button_mouse_exited"]
 [connection signal="pressed" from="HPUpButton" to="." method="_on_hp_up_button_pressed"]
-[connection signal="mouse_entered" from="HPDownButton" to="." method="_on_hp_down_button_mouse_entered"]
-[connection signal="mouse_exited" from="HPDownButton" to="." method="_on_hp_down_button_mouse_exited"]
 [connection signal="pressed" from="HPDownButton" to="." method="_on_hp_down_button_pressed"]
-[connection signal="mouse_entered" from="EnergyUpButton" to="." method="_on_energy_up_button_mouse_entered"]
-[connection signal="mouse_exited" from="EnergyUpButton" to="." method="_on_energy_up_button_mouse_exited"]
 [connection signal="pressed" from="EnergyUpButton" to="." method="_on_energy_up_button_pressed"]
-[connection signal="mouse_entered" from="EnergyDownButton" to="." method="_on_energy_down_button_mouse_entered"]
-[connection signal="mouse_exited" from="EnergyDownButton" to="." method="_on_energy_down_button_mouse_exited"]
 [connection signal="pressed" from="EnergyDownButton" to="." method="_on_energy_down_button_pressed"]
 [connection signal="pressed" from="Button" to="." method="_reset_potion_up"]
